@@ -1,9 +1,25 @@
-<?php?>
+<?php
+	if(isset($_POST["username"])) {
+		$name = $_POST["username"];
+		$pass = $_POST["pass"];
+		if($name == "thanh" && $pass == "123") {
+			header("Location: success.php");
+			exit();
+		}
+		else {
+			header("Location: fail.php");
+			exit();
+		}
+	}
+?>
 <html>
+<head>
+<link rel="stylesheet" type="text/css" href="../css/login.css" />
+</head>
 <body>
-<form name="login" action="login.php">
+<form name="login" action="login.php" method="post">
 <table>
-	<th>
+	<th colspan="2">
 		Login
 	</th>
 	<tr>
