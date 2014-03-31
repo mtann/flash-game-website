@@ -1,15 +1,24 @@
 <?php
+    session_start();
+    require('../libraries/config.php');
+?>
+<?php    
 	if(isset($_POST["username"])) {
-		$name = $_POST["username"];
-		$pass = $_POST["pass"];
-		if($name == "thanh" && $pass == "123") {
-			header("Location: success.php");
-			exit();
-		}
-		else {
+		
+        $name = strtolower(addslashes($_POST['username']));
+		$pass = md5(addslashes($_POST["pass"]));        
+        $sql = "select username from account where username='".$name."' limit 1";// 
+        $sql_query = mysql_query($sql) ;
+        $num_rows = mysql_num_rows($sql_query);
+        if($num_rows > 0){
+            //$data = mysql_fetch_assoc($sql_query);
+            header("Location: success.php");
+			exit();   
+        }else{
 			header("Location: fail.php");
 			exit();
-		}
+
+        }        
 	}
 ?>
 <html>
@@ -28,12 +37,13 @@
 	</tr>
 	<tr>
 		<td>Password</td>
-		<td><input type="text" name="pass" value="" /></td>
+		<td><input type="password" name="pass" value="" /></td>
 	</tr>
 	<tr>
 		<td>
 			<input type="checkbox" name="remember" /> Remember me
 		</td>
+        <td><a href="fogot_pass.php">You forgot the password</a></td>
 	</tr>
 	<tr>
 		<td>
