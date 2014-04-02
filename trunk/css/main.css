@@ -34,11 +34,16 @@
 	background:green;
 	height:50px;
 }
-#menu-bar{
-	float:left;
+
+#menu-bar
+{
 	
+	background-color:#D6F7FF;	
+	float:left;
+	padding-right:25px;
 }
 #menu-bar ul{
+	border-color:#FFFFFF;
 	list-style:none;
 }
 #menu-bar li{
