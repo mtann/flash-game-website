@@ -1,80 +1,11 @@
-.wrapper{
-	background:white;
-	width:1200px;
-	margin:auto;
-	padding:0px;
-}
-.top-page, #share, #login{
-	background:#FAFAFA;
-	height:50px;
-}
-#share {
-	float:left;
-}
-#share ul{
-	list-style:none;
-}
-#share li{
-	display:inline;
-}
-#login{
-	float:right;
-}
-#login ul{
-	list-style:none;
-}
-#login li{
-	display:inline;
-}
-.header {
-	background:yellow;
-	height:100px;
-}
-.menu, #menu-bar, #search-box{
-	background:green;
-	height:50px;
-}
+@import url('head.css');
+@import url('menu.css');
 
-#menu-bar
-{
-	
-	background-color:#D6F7FF;	
-	float:left;
-	padding-right:25px;
-}
-#menu-bar ul{
-	border-color:#FFFFFF;
-	list-style:none;
-}
-#menu-bar li{
-	display:inline;
-}
-#search-box{
-	float:right;
-	height:30px;
-	padding:10px 5px;
-}
-.wrap-content, .left-side, .content {
-	width:1100px;
-	float:left;
-}
-.left-side{
-	float:left;
-	width:100px;
-	background:red;
-	
-}
 .content{
-	width:800px;
-	float:right;
-	padding:50px 100px;
-}
-.right-side{
-	float:right;
-	width:100px;
-	background:red;
+	width: 864px;
+	margin: 0 auto;		
 }
 .footer{
-	clear:both;
-	background:gray;
+	width: 864px;
+	margin: 0 auto;		
 }

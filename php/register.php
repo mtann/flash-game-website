@@ -45,7 +45,7 @@
         
         $sql = "insert into account (username, password, email) values ('$name','$pass','$email')";
         if(mysql_query($sql)){
-            echo "Account {$name} is created. <a href='login.php' >Click on here to login </a>";
+            echo "Account {$name} is created. <a href='../index.php' >Click on here to login </a>";
             exit();    
         }        
                 
