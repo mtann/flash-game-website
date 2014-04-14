@@ -1,0 +1,18 @@
+﻿ul{
+ list-style-type: none;
+ padding: 0;
+ margin: 0;  
+ float: left;
+}
+li{
+display: inline;  
+margin-right:32px;
+}
+.boxsearch{
+	float: right;
+}
+.menu_game{
+	width: 864px;
+	margin: 0 auto;
+	background-color: #F2F2F2;	
+}

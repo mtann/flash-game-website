@@ -1,80 +1,44 @@
-﻿<?php
+<?php
+	session_start();
+	require ("libraries/config.php");
 ?>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <link rel="stylesheet" type="text/css" href="css/login.css" />
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	
+	<!--CSS-->
+    <link rel="stylesheet" type="text/css" href="css/main.css" />	
+	<!--JAVASCRIPT-->
+	
 </head>
 <body>
 <div class="container">
-<div class="header">
-    <div class="logo_header">
-            
-    </div>
-    <div class="signUp_header">
-        <form name="login" action="php/login.php" method="post">
-        <table>
-        	<th colspan="2">
-        		Login
-        	</th>
-        	<tr>
-        		<td>UserName</td>
-        		<td><input type="text" name="username" value="" /></td>
-        	</tr>
-        	<tr>
-        		<td>Password</td>
-        		<td><input type="password" name="pass" value="" /></td>
-        	</tr>
-        	<tr>
-        		<td>
-        			<input type="checkbox" name="remember" /> Remember me
-        		</td>
-                <td><a href="./php/fogot_pass.php">You forgot the password</a></td>
-        	</tr>
-        	<tr>
-        		<td>
-        			<input type="submit" value="Login" />
-        		</td>
-        		<td>
-        			<a href="./php/register.php">Sign up</a>
-        		</td>
-        	</tr>
-        </table>
-        </form>        
-
-    </div>
-</div>
-<div class="categories_game">
-    <ul>
-        <li><span>
-                <img />
-            </span>
-            <a href="games/action.html" title="Action game" >Action</a>
-        </li>
-        <li><a href="games/strategy.html" title="Strategy game">Strategy</a></li>
-        <li><a href="games/brain.html" title="Brain game">Brain</a></li>
-        <li><a href="games/adventure.html" title="Adventure game">Adventure</a></li>
-        <li><a href="games/speed.html" title="Speed game">Speed</a></li>
-        <li><a href="games/classic.html" title="Classic game">Classic</a></li>
-        <li><a href="games/other_game.html" title="Other good game">Other game</a></li>        
-    </ul>
-    <div class="boxsearch">
-        <span class="search">
-            <input type="text" placeholder="Search game"/>
-            <input type="submit" name="submit_search" value="Search"/>
-        </span>
-    </div>
-</div>
+  <?php
+    include("php/head.php");
+	include("php/menu-game.php");
+  ?>
+	
 <div class="content">
-<!--    <div class="game_container">
-         <div class="box_gameplay"></div>
-         <div class="vote_gameplay"></div>   
-    </div>
-    <div class="comment">
-        
-    </div>
--->  
+ <div class="left_content">
+ <div class="hot_game">
+  <?php include("php/games/lastest-game-index.php")?>   
+  <?php include("php/games/best-game-index.php")?>  
+  </div>
+  <?php include("php/games/game-play-much-index.php")?>
+  <?php include("php/games/action-game-index.php")?>
+  <?php include("php/games/strategy-game-index.php")?>
+  <?php include("php/games/brain-game-index.php")?>
+  <?php include("php/games/adventure-game-index.php")?>
+  <?php include("php/games/speed-game-index.php")?>
+  <?php include("php/games/classic-game-index.php")?>
+  <?php include("php/games/other-game-index.php")?>
+  
+	<div class="right_content">
+	</div>
+  <?php include("php/footer.php")?>
 </div>
-<div class="footer"></div>
+</div>
 </div>
 </body>
 </html>

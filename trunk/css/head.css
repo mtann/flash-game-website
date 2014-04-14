@@ -1,0 +1,25 @@
+﻿th {
+	background:#FEAEFE;
+}
+table {
+	border:1px solid;	
+}
+tr {
+	text-align:center;
+}
+
+.header{
+	width: 864px;
+	margin: 0 auto;	
+	background-color:#CDE1F8;
+}
+.signUp{
+  float: right;
+}
+a{
+	text-decoration:none;	
+}
+.logo_header{
+  width: 172px;
+  float: left;
+}

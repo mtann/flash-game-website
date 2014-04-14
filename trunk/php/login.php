@@ -7,7 +7,7 @@
 		
         $name = strtolower(addslashes($_POST['username']));
 		$pass = md5(addslashes($_POST["pass"]));        
-        $sql = "select username from account where username='".$name."' limit 1";// 
+        $sql = "select username from account where username='".$name."' limit 1"; 
         $sql_query = mysql_query($sql) ;
         $num_rows = mysql_num_rows($sql_query);
         if($num_rows > 0){
@@ -41,18 +41,19 @@
 	</tr>
 	<tr>
 		<td>
-			<input type="checkbox" name="remember" /> Remember me
-		</td>
-        <td><a href="fogot_pass.php">You forgot the password</a></td>
-	</tr>
-	<tr>
-		<td>
 			<input type="submit" value="Login" />
 		</td>
 		<td>
 			<a href="register.php">Sign up</a>
 		</td>
 	</tr>
+	<tr>
+		<td>
+			<input type="checkbox" name="remember" /> Remember me
+		</td>
+        <td><a href="fogot-pass.php">You forgot the password</a></td>
+	</tr>
+    
 </table>
 </form>
 </body>
