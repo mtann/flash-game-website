@@ -26,7 +26,8 @@ SET time_zone = "+00:00";
 -- Table structure for table `account`
 --
 -- table tai khoan
-CREATE TABLE IF NOT EXISTS `account` (
+CREATE TABLE IF NOT EXISTS `account` 
+(
   `id` int(11) NOT NULL,
   `username` int(11) NOT NULL,
   `password` int(11) NOT NULL,

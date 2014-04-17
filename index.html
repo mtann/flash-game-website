@@ -1,5 +1,26 @@
 <html>
 <head>
+
+<?
+	// kiem tra xem tai khoan da duoc dang ky chua, neu chua thi chuyen ve trang 
+	session_start(); 
+	if(!session_is_registered(myusername))
+	{ 
+		header("location:acount\MainLogin.php"); 
+	} 
+	else 
+	{
+		<h2>login thanh cong</h2>
+	}
+
+?>
+
+<?
+	// log out
+	session_start(); 
+	session_destroy(); 
+?>
+
 <script src="./js/jquery-1.11.0.js"></script>
 <script src="./js/my_jquery.js"></script>
 <link rel="stylesheet" type="text/css" href="./css/main.css" />
