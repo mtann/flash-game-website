@@ -1,0 +1,284 @@
+body{
+	width: 1363px;
+	margin: 0px auto;
+	padding: 0px;
+}
+div{
+	display: block;
+}
+
+/*TOP BAR*/
+.topbar a{
+	text-decoration: none;
+	color: white;
+}
+.topbar {
+	background: #0B1C26;
+	height: 35px;
+	position: fixed;
+	width: 100%;
+	left: 0;
+	z-index: 999;
+	top: 0;
+}
+.topbar-inner {
+	margin: auto;
+	width: 995px;
+	padding: 8px 0 8px 10px;
+}
+.topbar-left{
+	float: left;
+}
+.topbar-right{
+	float:right;
+}
+.register{
+	background: url('global.png') no-repeat 0px -137px;
+	float: left;
+	width: 14px;
+	height: 13px;
+	margin-top: 3px;
+	padding-right: 3px;
+}
+.sign-in{
+	background: url('global.png') no-repeat 0px -162px;
+	float: left;
+	width: 14px;
+	height: 13px;
+	margin-top: 3px;
+	padding-right: 3px;
+}
+.pull-left{
+	float: left;
+	padding-left: 8px;
+	padding-right: 8px;
+}
+
+.share{
+	float: left;
+	padding-left: 2px;
+	padding-right: 2px;
+}
+.facebook-share{
+	background: url('widget016_top.gif') no-repeat 0px -272px;
+	/*co mot thanh phan " " ton tai*/
+	float: left;
+	width: 16px;
+	height: 16px;
+}
+.twitter-share{
+	background: url('widget016_top.gif') no-repeat 0px -832px;
+	float: left;
+	width: 16px;
+	height: 16px;
+}
+.google-plus-share{
+	background: url('widget016_top.gif') no-repeat 0px -352px;
+	float: left;
+	width: 16px;
+	height: 16px;
+}
+.tumblr-share{
+	background: url('widget016_top.gif') no-repeat 0px -816px;
+	float: left;
+	width: 16px;
+	height: 16px;
+}
+
+
+/*CONTAINER*/
+.page-wrp{
+	background: #A516DE;
+}
+.container{
+	margin-top: 35px;
+}
+.left-ads{
+	float: left;
+	position: relative;
+	width: 180px;
+}
+.content{
+	float: left;
+	position: relative;
+	width: 1003px;
+	background: #FFFFFF;
+}
+.comments{
+	float: left;
+	position: relative;
+	width: 180px;
+}
+.logo-search{
+	float: left;
+}
+.logo{
+	float: left;
+	background: url('global.png') no-repeat -270px 0px;
+	width: 120px;
+	height: 30px;
+}
+.search-input{
+	float: left;
+	height: 24px;
+	margin-right: 0px;
+	border-right: 0px;
+}
+.search-button{
+	float: left;
+	background: url('global.png') no-repeat -40px 0px;
+	width: 40px;
+	height: 32px;
+}
+.search-button:hover{
+	cursor: pointer;
+}
+input{
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+}
+/*NAVIGATION BAR*/
+.navbar{
+	background: url('nav.png') top left no-repeat;
+	width: 1003px;
+	height: 107px;
+	clear: both;
+	padding-top: 2px;
+}
+.nav li {
+	width: 	140px;
+	height: 44px;
+	float: left;
+	text-align: center;
+	border-right: 1px solid #0B5408;
+}
+.nav li:last-child{
+	border-right: 0px;
+}
+ul{
+	list-style: none;
+	padding: 0px;
+}
+.nav a{
+	line-height: 44px;
+	text-decoration: none;
+	color: #FFFFFF;
+	font-weight: bold;
+}
+.nav li:hover{
+	background: url('nav-selected_03.png') repeat-y 0px 0px;
+	width: 	140px;
+	height: 44px;	
+	cursor: pointer;
+}
+.nav li:hover a{
+	color: #DCEB3F;
+}
+.left-navbar{
+	background: url('global.png') no-repeat -85px 0px;
+	width: 85px;
+	height: 70px;
+	z-index: 1;
+	position: absolute;
+	left: 0;
+}
+.right-navbar{
+	background: url('global.png') no-repeat -179px 0;
+	width: 89px;
+	height: 73px;
+	z-index: 1;
+	position: absolute;
+	right: 0;
+}
+/*PLAY SCREEN*/
+.playscreen{
+	width: 100%;
+	height: 500px;
+	background: #1EE8D0;
+}
+/*GAMELIST*/
+.gamelist ul{
+	width: 300px;
+	float: left;
+	border: 1px solid #26C914;
+	margin: 10px;
+}
+.gamelist ul li{
+	float: left;
+	width: 110px;
+}
+.gamelist ul li a{
+	display: block;
+}
+.game-icon{
+	background: url('BanSung.jpg') no-repeat 0px 0px;
+	width: 85px;
+	height: 70px;
+}
+/*THANKS*/
+.thanks{
+	clear: both;
+	width: 1003px;
+}
+.left-dcr{
+	background: url('global.png') -89px -152px;
+	float: left;
+	position: absolute;
+	left: 25px;
+	width: 108px;
+	height: 53px;
+	z-index: 1;
+}
+.left-frame{
+	background: url('global.png') 0px -213px;
+	float: left;
+	position: absolute;
+	left: 83px;
+	width: 52px;
+	height: 49px;
+}
+.right-frame{
+	background: url('global.png') -58px -213px;
+	float: left;
+	position: absolute;
+	right: 86px;
+	width: 52px;
+	height: 49px;
+}
+.thanks-txt{
+	float: left;
+	width: 740px;
+	height: 49px;
+	position: absolute;
+	left: 125px;
+	background: url('global.png') repeat-x 0 -267px;
+}
+.thanks-txt p{
+	text-align: center;
+	font-size: 12px;
+	margin: 0px;
+}
+.thanks-txt p:first-child{
+	color: #D63722;
+	font-weight: bold;
+}
+.right-dcr{
+	background: url('global.png') -89px -76px;
+	float: left;
+	position: absolute;
+	right: 25px;
+	width: 102px;
+	height: 75px;
+}
+/*FOOTER*/
+.footer{
+	background: #1B1F07;
+	height: 50px;
+	clear: both;
+	padding-top: 70px;
+}
+.footer p{
+	text-align: center;
+	color: #1D14D9;
+}
