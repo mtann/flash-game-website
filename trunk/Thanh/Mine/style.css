@@ -1,5 +1,5 @@
 body{
-	width: 1363px;
+	width: 1290px;
 	margin: 0px auto;
 	padding: 0px;
 }
@@ -93,21 +93,132 @@ div{
 .container{
 	margin-top: 35px;
 }
+.content{
+	float: left;
+	position: relative;
+	width: 900px;
+	background: #FFFFFF;
+}
+/*LEFT-ADS*/
 .left-ads{
 	float: left;
 	position: relative;
 	width: 180px;
 }
-.content{
-	float: left;
-	position: relative;
-	width: 1003px;
-	background: #FFFFFF;
-}
-.comments{
-	float: left;
-	position: relative;
+#xlogo{
+	background: url('xdeal.png') top left no-repeat;
 	width: 180px;
+	height: 30px;
+}
+#link-1{
+	font-size: 11px;
+	color: #FFFFFF;
+	float: left;
+	text-decoration: none;
+	background: #D90921;
+	width: 90px;
+	height: 30px;
+	text-align: center;
+	line-height: 30px;
+}
+#link-2{
+	font-size: 11px;
+	color: #FFFFFF;
+	float: left;
+	text-decoration: none;
+	background: #2409D9;
+	width: 90px;
+	height: 30px;
+	text-align: center;
+	line-height: 30px;
+}
+#xdealproducts{
+	clear: both;
+}
+#product-1, #product-2{
+	width: 180px;
+	height: 116px;
+}
+/*COMMENTS*/
+.game-hot-and-comments{
+	float: left;
+	position: relative;
+	width: 210px;
+}
+#game-hot-list{
+	margin-left: 10px;
+	width: 180px;
+	padding-left: 4px;
+	padding-right: 4px;
+	list-style: none;
+	border-radius: 3px;
+	border: 1px solid #050505;
+}
+#game-hot-list li{
+	margin-bottom: 10px;
+}
+
+/*COMMENTS*/
+#comment-list{
+	list-style: none;
+	width: 180px;
+	margin-left: 10px;
+}
+#comment-list li{
+	margin-bottom: 10px;
+}
+#comment-list li a{
+	font-style: italic;
+	float: left;
+}
+/*TOP ADS*/
+.top-ads{
+	margin-top: 10px;
+	margin-left: 10px;
+	height: 100px;
+	float: left;
+}
+.next-previous{
+	height: 100px;
+	width: 23px;
+	float: left;
+	border: 1px solid;
+	border-radius: 3px;
+}
+#previousarticle{
+	background: url('topads/prev_90.png') center center no-repeat;
+}
+#nextarticle{
+	background: url('topads/next_90.png') center center no-repeat;
+}
+#articles{
+	/*overflow: hidden;*/
+	width: 630px;
+	height: 100px;
+	float: left;
+	border: 1px solid;
+	border-radius: 3px;
+}
+#articles div div{
+	float: left;
+	width: 315px;
+	height: 100px;
+}
+#article-1{
+	background: #35F218;
+}
+#article-2{
+	background: #F218D9;
+}
+#articles div div a{
+	float: left;
+	text-decoration: none;
+}
+.article-image{
+	width: 200px;
+}
+.article-title{
+	width: 115px;
 }
 .logo-search{
 	float: left;
@@ -117,6 +228,8 @@ div{
 	background: url('global.png') no-repeat -270px 0px;
 	width: 120px;
 	height: 30px;
+	margin-bottom: 20px;
+	margin-top: 5px;
 }
 .search-input{
 	float: left;
@@ -141,13 +254,13 @@ input{
 /*NAVIGATION BAR*/
 .navbar{
 	background: url('nav.png') top left no-repeat;
-	width: 1003px;
+	width: 900px;
 	height: 107px;
 	clear: both;
 	padding-top: 2px;
 }
 .nav li {
-	width: 	140px;
+	width: 	125px;
 	height: 44px;
 	float: left;
 	text-align: center;
@@ -168,7 +281,7 @@ ul{
 }
 .nav li:hover{
 	background: url('nav-selected_03.png') repeat-y 0px 0px;
-	width: 	140px;
+	width: 	125px;
 	height: 44px;	
 	cursor: pointer;
 }
@@ -194,27 +307,43 @@ ul{
 /*PLAY SCREEN*/
 .playscreen{
 	width: 100%;
-	height: 500px;
+	/*height: 500px;*/
 	background: #1EE8D0;
 }
 /*GAMELIST*/
-.gamelist ul{
-	width: 300px;
+.gamelist div{
 	float: left;
+}
+.gamelist div{
+	width: 275px;
 	border: 1px solid #26C914;
+	border-radius: 5px;
 	margin: 10px;
 }
-.gamelist ul li{
+.gamelist div ul li{
 	float: left;
-	width: 110px;
+	width: 85px;
+	margin: 3px;
 }
-.gamelist ul li a{
+.gamelist div ul li a{
 	display: block;
+	text-decoration: none;
+	text-align: center;
 }
 .game-icon{
 	background: url('BanSung.jpg') no-repeat 0px 0px;
 	width: 85px;
 	height: 70px;
+}
+.game-title h5{
+	height: 50px;
+	background: #BCAAF0;
+	margin: 0px;
+	line-height: 50px;
+	text-align: center;
+}
+.game-title{
+	text-decoration: none;
 }
 /*THANKS*/
 .thanks{

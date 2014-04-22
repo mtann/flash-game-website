@@ -3,8 +3,10 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<link rel="stylesheet" type="text/css" href="style.css">
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<script type="text/javascript" src="script.js"></script>
 	</head>
-	<body>
+	<body onload="rotateAdsImages(), fadeOutArticle()">
 		<div class="page-wrp">
 			<div class="topbar">
 				<div class="topbar-inner">
@@ -39,7 +41,32 @@
 			<!--end of topbar-->
 			<div class="container">
 				<div class="left-ads">
-					Tin từ Bệnh viện Xanh Pôn (Hà Nội) ngày 3/4 cho biết, bà Trần Thị Thanh D. (SN 1967, ở phường Bách Khoa, quận Hai Bà Trưng, Hà Nội) là nạn nhân bị em trai cắt chân trong khi đang điều trị tại Bệnh viện Xanh Pôn, đã tử vong ngày 2/4 vừa qua.
+					<div id="hauvuong">
+						<a style="display:block;" target="_blank" href="http://b.adsquangcao.com/ads/outlink/93">
+							<div id="float_content_right">
+								<!-- Start quang cao-->
+								<embed style="pointer-events:none;" wmode="transparent" type="application/x-shockwave-flash" pluginspage="http://www.adobe.com/shockwave/download/index.c=gi?P1_Prod_Version=ShockwaveFlash" name="fl-t" width="180" height="150" src="http://b.adsquangcao.com/ads/image/93" bgcolor="transparent" quality="high" seamlesstabbing="false" allowscriptaccess="samedomain">
+								<!-- End quang cao -->
+							</div>
+						</a>
+					</div>
+					<div id="XdealAds">
+						<a href="">
+							<div id="xlogo"></div>
+						</a>
+						<div id="xdealbar">
+							<a id="link-1" href="">SALE OFF NAM</a>
+							<a id="link-2" href="">SALE OFF NU</a>
+						</div>
+						<div id="xdealsproducts">
+							<a href="">
+								<img src="" id="product-1">
+							</a>
+							<a href="">
+								<img src="" id="product-2">
+							</a>
+						</div>
+					</div>
 				</div>
 
 				<div class="content">
@@ -57,7 +84,25 @@
 						</div>
 						
 						<div class="top-ads">
-							Tin từ Bệnh viện Xanh Pôn (Hà Nội) ngày 3/4 cho biết, bà Trần Thị Thanh D. (SN 1967, ở phường Bách Khoa, quận Hai Bà Trưng, Hà Nội) là nạn nhân bị em trai cắt chân trong khi đang điều trị tại Bệnh viện Xanh Pôn, đã tử vong ngày 2/4 vừa qua.
+							<!-- <a href="" id="previousarticle" class="next-previous" onclick="previousArticles()"></a> -->
+								<div id="articles">
+										<div>
+											<div id="article-1">
+												<a href=""  class="article-image">
+													<img id="image-1" src="topads/13660816991001-83db3.jpg">
+												</a>
+												<a href="" id="article-title-1" class="article-title"></a>
+											</div>
+											
+											<div id="article-2">
+												<a href=""  class="article-image">
+													<img id="image-2" src="topads/dota2_image1-bacc4.jpg">
+												</a>
+												<a href="" id="article-title-2" class="article-title"></a>
+											</div>
+										</div>
+								</div>
+							<!-- <a href="" id="nextarticle" class="next-previous" onclick="nextArticles()"></a>	 -->
 						</div>
 					</div>
 					<div class="pkg">
@@ -77,53 +122,185 @@
 					</div>
 					<div class="pkg">
 						<div class="playscreen">
-							<h1>PLAY SCREEN</h1>
+							<embed src="./swf/worm.swf" width="900" height="600"> 
 						</div>
 					</div>
 					<div class="pkg">
 						<div class="gamelist">
-							<ul>
-								<li>
-									<a href="#" class="game-icon"></a>
-									<a href="#" class="game-link">Bắn súng</a>
-								</li>
-								<li>
-									<a href="#" class="game-icon"></a>
-									<a href="#" class="game-link">Bắn súng</a>
-								</li>
-								<li>
-									<a href="#" class="game-icon"></a>
-									<a href="#" class="game-link">Bắn súng</a>
-								</li>
-							</ul>
-							<ul>
-								<li>
-									<a href="#" class="game-icon"></a>
-									<a href="#" class="game-link">Bắn súng</a>
-								</li>
-								<li>
-									<a href="#" class="game-icon"></a>
-									<a href="#" class="game-link">Bắn súng</a>
-								</li>
-								<li>
-									<a href="#" class="game-icon"></a>
-									<a href="#" class="game-link">Bắn súng</a>
-								</li>
-							</ul>
-							<ul>
-								<li>
-									<a href="#" class="game-icon"></a>
-									<a href="#" class="game-link">Bắn súng</a>
-								</li>
-								<li>
-									<a href="#" class="game-icon"></a>
-									<a href="#" class="game-link">Bắn súng</a>
-								</li>
-								<li>
-									<a href="#" class="game-icon"></a>
-									<a href="#" class="game-link">Bắn súng</a>
-								</li>
-							</ul>
+							<div>
+								<a href="" class="game-title"><h5>Game Hành Động</h5></a>
+								<ul>
+									<li>
+										<a href="#" class="game-icon"></a>
+										<a href="#" class="game-link">Bắn súng</a>
+									</li>
+									<li>
+										<a href="#" class="game-icon"></a>
+										<a href="#" class="game-link">Bắn súng</a>
+									</li>
+									<li>
+										<a href="#" class="game-icon"></a>
+										<a href="#" class="game-link">Bắn súng</a>
+									</li>
+									<li>
+										<a href="#" class="game-icon"></a>
+										<a href="#" class="game-link">Bắn súng</a>
+									</li>
+									<li>
+										<a href="#" class="game-icon"></a>
+										<a href="#" class="game-link">Bắn súng</a>
+									</li>
+									<li>
+										<a href="#" class="game-icon"></a>
+										<a href="#" class="game-link">Bắn súng</a>
+									</li>
+								</ul>
+							</div>
+							<div>
+								<a href="" class="game-title"><h5>Game Phiêu Lưu</h5></a>
+								<ul>
+									<li>
+										<a href="#" class="game-icon"></a>
+										<a href="#" class="game-link">Bắn súng</a>
+									</li>
+									<li>
+										<a href="#" class="game-icon"></a>
+										<a href="#" class="game-link">Bắn súng</a>
+									</li>
+									<li>
+										<a href="#" class="game-icon"></a>
+										<a href="#" class="game-link">Bắn súng</a>
+									</li>
+									<li>
+										<a href="#" class="game-icon"></a>
+										<a href="#" class="game-link">Bắn súng</a>
+									</li>
+									<li>
+										<a href="#" class="game-icon"></a>
+										<a href="#" class="game-link">Bắn súng</a>
+									</li>
+									<li>
+										<a href="#" class="game-icon"></a>
+										<a href="#" class="game-link">Bắn súng</a>
+									</li>
+								</ul>
+							</div>
+							<div>
+								<a href="" class="game-title"><h5>Game Chiến Thuật</h5></a>
+								<ul>
+									<li>
+										<a href="#" class="game-icon"></a>
+										<a href="#" class="game-link">Bắn súng</a>
+									</li>
+									<li>
+										<a href="#" class="game-icon"></a>
+										<a href="#" class="game-link">Bắn súng</a>
+									</li>
+									<li>
+										<a href="#" class="game-icon"></a>
+										<a href="#" class="game-link">Bắn súng</a>
+									</li>
+									<li>
+										<a href="#" class="game-icon"></a>
+										<a href="#" class="game-link">Bắn súng</a>
+									</li>
+									<li>
+										<a href="#" class="game-icon"></a>
+										<a href="#" class="game-link">Bắn súng</a>
+									</li>
+									<li>
+										<a href="#" class="game-icon"></a>
+										<a href="#" class="game-link">Bắn súng</a>
+									</li>
+								</ul>
+							</div>
+							<div>
+								<a href="" class="game-title"><h5> Game Vui</h5></a>
+								<ul>
+									<li>
+										<a href="#" class="game-icon"></a>
+										<a href="#" class="game-link">Bắn súng</a>
+									</li>
+									<li>
+										<a href="#" class="game-icon"></a>
+										<a href="#" class="game-link">Bắn súng</a>
+									</li>
+									<li>
+										<a href="#" class="game-icon"></a>
+										<a href="#" class="game-link">Bắn súng</a>
+									</li>
+									<li>
+										<a href="#" class="game-icon"></a>
+										<a href="#" class="game-link">Bắn súng</a>
+									</li>
+									<li>
+										<a href="#" class="game-icon"></a>
+										<a href="#" class="game-link">Bắn súng</a>
+									</li>
+									<li>
+										<a href="#" class="game-icon"></a>
+										<a href="#" class="game-link">Bắn súng</a>
+									</li>
+								</ul>
+							</div>
+							<div>
+								<a href="" class="game-title"><h5>Game Bạn Gái</h5></a>
+								<ul>
+									<li>
+										<a href="#" class="game-icon"></a>
+										<a href="#" class="game-link">Bắn súng</a>
+									</li>
+									<li>
+										<a href="#" class="game-icon"></a>
+										<a href="#" class="game-link">Bắn súng</a>
+									</li>
+									<li>
+										<a href="#" class="game-icon"></a>
+										<a href="#" class="game-link">Bắn súng</a>
+									</li>
+									<li>
+										<a href="#" class="game-icon"></a>
+										<a href="#" class="game-link">Bắn súng</a>
+									</li>
+									<li>
+										<a href="#" class="game-icon"></a>
+										<a href="#" class="game-link">Bắn súng</a>
+									</li>
+									<li>
+										<a href="#" class="game-icon"></a>
+										<a href="#" class="game-link">Bắn súng</a>
+									</li>
+								</ul>
+							</div>
+							<div>
+								<a href="" class="game-title"><h5>Game Đua Xe</h5></a>
+								<ul>
+									<li>
+										<a href="#" class="game-icon"></a>
+										<a href="#" class="game-link">Bắn súng</a>
+									</li>
+									<li>
+										<a href="#" class="game-icon"></a>
+										<a href="#" class="game-link">Bắn súng</a>
+									</li>
+									<li>
+										<a href="#" class="game-icon"></a>
+										<a href="#" class="game-link">Bắn súng</a>
+									</li>
+									<li>
+										<a href="#" class="game-icon"></a>
+										<a href="#" class="game-link">Bắn súng</a>
+									</li>
+									<li>
+										<a href="#" class="game-icon"></a>
+										<a href="#" class="game-link">Bắn súng</a>
+									</li>
+									<li>
+										<a href="#" class="game-icon"></a>
+										<a href="#" class="game-link">Bắn súng</a>
+									</li>
+								</ul>
+							</div>
 						</div>
 					</div>
 					<div class="thanks">
@@ -140,8 +317,49 @@
 					</div>
 				</div>
 
-				<div class="comments">
-					Tin từ Bệnh viện Xanh Pôn (Hà Nội) ngày 3/4 cho biết, bà Trần Thị Thanh D. (SN 1967, ở phường Bách Khoa, quận Hai Bà Trưng, Hà Nội) là nạn nhân bị em trai cắt chân trong khi đang điều trị tại Bệnh viện Xanh Pôn, đã tử vong ngày 2/4 vừa qua.
+				<div class="game-hot-and-comments">
+					<div class="game-hot">
+						<marquee behavior="scroll" class="comments" direction="left" bgcolor="#66CD00">
+							<h2>GAMES HOT</h2>
+						</marquee>
+						<ul id="game-hot-list">
+							<li id="game-hot-1">
+								<a href=""><img src="gamehot/archlord01-67df4.jpg"></a>
+							</li>
+							<li id="game-hot-2">
+								<a href=""><img src="gamehot/dai-nao-thien-cung-5cb5d.jpg"></a>
+							</li>
+							<li id="game-hot-3">
+								<a href=""><img src="gamehot/naruto-shippuden-ultimate-ninja-storm-revolution_PS3_1257-ea880.jpg"></a>
+							</li>
+						</ul>
+					</div>
+					<div class="comments">
+						<marquee behavior="scroll" class="comments" direction="left" bgcolor="#4F1EE3">
+							<h2>USERS COMMENTS</h2>
+
+						</marquee>
+						<ul id="comment-list">
+							<li class="comment">
+								<a href="" class="comment-user">Pham Van Thanh<span>:</span></a>
+								<p class="comment-content">Game hay</p>
+							</li>
+							<li class="comment">
+								<a href="" class="comment-user">Ly Minh Tri<span>:</span></a>
+								<p class="comment-content">Game hay</p>
+							</li>
+							<li class="comment">
+								<a href="" class="comment-user">Bui Tuan Anh<span>:</span></a>
+								<p class="comment-content">Game sida vkl</p>
+							</li>
+							<li>
+								<form>
+									<input type="text">
+									<input type="submit" value="Post">
+								</form>
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 			<!-- end of container -->
