@@ -22,7 +22,7 @@
 <div class="content">
  <div class="left_content">
  <div class="hot_game">
-  <?php include("php/games/lastest-game-index.php")?>   
+  <?php include("php/games/latest-game-index.php")?>   
   <?php include("php/games/best-game-index.php")?>  
   </div>
   <?php include("php/games/game-play-much-index.php")?>

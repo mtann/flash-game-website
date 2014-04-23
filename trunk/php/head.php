@@ -1,7 +1,7 @@
 ﻿
    <div class = "header">
          <div class="logo_header">
-            <a href="http://localhost/svn-flashgame/"><img src="" alt="Image Logo" title="Game online"/></a>
+            <a href="http://localhost/svn-flashgame/"><img src="img/logo.gif" height="108" width="200" alt="Image Logo" title="Game online"/></a>
         </div>
     <div class="signUp">
         <form name="login" action="" method="post">
