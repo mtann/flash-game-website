@@ -1,11 +1,25 @@
 @import url('head.css');
 @import url('menu.css');
+@import url('hot-game.css');
+@import url('rightcol.css');
+body{
+font-size:12px;
+margin: 0;
+}
+* { font-family: Arial,Helvetica,sans-serif;}
+.container{
+width:1004px; margin: 0 auto;
+background:#fff;
+}
+.clear { clear:both}
+img{border:0}
+a{text-decoration:none}
 
 .content{
-	width: 864px;
+	width: 1004px;
 	margin: 0 auto;		
 }
 .footer{
-	width: 864px;
+	width: 1004px;
 	margin: 0 auto;		
 }

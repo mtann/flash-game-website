@@ -1,18 +1,41 @@
-﻿ul{
- list-style-type: none;
- padding: 0;
- margin: 0;  
- float: left;
+﻿.menu-game{
+width:1004px;
+height:33px;
+background-color: #D3E5F9;
+margin: auto auto 20px;
 }
-li{
-display: inline;  
-margin-right:32px;
+.menu-game ul{
+ margin:0;
+ padding: 0 0 0 2px;
 }
-.boxsearch{
-	float: right;
+.menu-game ul li{
+display: inline-block;
+float: left;
+margin: 0 1px;
+margin-right:8px;
 }
-.menu_game{
-	width: 864px;
-	margin: 0 auto;
-	background-color: #F2F2F2;	
+.mnLeft{
+float: left;
+}
+.mnRight{
+padding:8px 8px 0 5px;
+display:inline-block;
+}
+.menu-game input{
+margin-top:5px;
+}
+.menu-game input{
+border:1px solid black;
+padding: 2px;
+border-radius:8px;
+}
+.menu-game #box-search{
+margin-left:48px;
+}
+.menu-game a{
+ color:#000;
+ font-weight:bold;
+}
+.menu-game a:hover{
+ color:#1B85E7;
 }

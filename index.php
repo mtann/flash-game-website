@@ -20,24 +20,10 @@
   ?>
 	
 <div class="content">
- <div class="left_content">
- <div class="hot_game">
-  <?php include("php/games/latest-game-index.php")?>   
-  <?php include("php/games/best-game-index.php")?>  
-  </div>
-  <?php include("php/games/game-play-much-index.php")?>
-  <?php include("php/games/action-game-index.php")?>
-  <?php include("php/games/strategy-game-index.php")?>
-  <?php include("php/games/brain-game-index.php")?>
-  <?php include("php/games/adventure-game-index.php")?>
-  <?php include("php/games/speed-game-index.php")?>
-  <?php include("php/games/classic-game-index.php")?>
-  <?php include("php/games/other-game-index.php")?>
-  
-	<div class="right_content">
-	</div>
-  <?php include("php/footer.php")?>
+ <?php include("php/center.php");?>
 </div>
+<div class="footer" style="clear:both;">
+ <?php include("php/footer.php")?>
 </div>
 </div>
 </body>
