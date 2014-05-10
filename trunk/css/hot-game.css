@@ -1,0 +1,97 @@
+﻿.hotGame {
+    height: 418px;
+    width: 697px;
+    margin-top:-1px;
+    overflow: hidden;
+    padding-bottom: 10px;
+}
+.latestGame {
+    float: left;
+    width: 256px;
+}
+.bestGame {
+    width: 408px;
+    float: left;  
+}
+.gameShow {
+    display: block;    
+    overflow: hidden;
+    padding-bottom: 5px;
+}
+.gameHide {
+    display: none;
+}
+
+.gameItem {
+    float: left;
+    padding: 10px 8px;   
+    width: 120px;
+}
+.bestGameTitle h1, .bestGameTitle h2, .bestGameTitle a {
+    font-size: 20px;
+    margin: 0;
+}
+.seeAll {
+    text-align: right;
+}
+.latestGameTitle {   
+    height: 45px;
+    overflow: hidden;
+    padding: 0 0 10px 0px;
+}
+.latestGameTitle h2, .gameTaiTroTitle a {
+    margin: 0;
+}
+.latestGameImg {
+    height: 201px;
+    overflow: hidden;
+    padding: 0 0 10px;
+    width: 240px;
+}
+.latestGameName {    
+    font-size:18px;
+    font-weight:bold;
+    height:70px;
+    padding: 0 0 10px 33px;
+}
+.latestGameName a{    
+	color:#000000;
+}
+.latestGameList ul {
+    margin: 0;
+    padding: 0 0 0 20px;
+}
+.latestGameList ul li {
+    display: inline-block;
+    float: left;
+    list-style: none;
+    margin: 0 9px 0 0;
+}
+.latestGameList a{
+opacity:0.7;filter:alpha(opacity=70);
+}
+.gameItemName-best {
+    font-size: 11px;
+    padding: 5px 5px 0 7px;
+    width: 107px;
+}
+.gameItemName-best a {
+    color: #1475CD;
+    font-size: 12px;
+    font-weight: bold;
+}
+.gameItemName-best a:hover {
+    color: #000;
+}
+.seeAll a{
+font-size:12px;
+font-weight:bold;
+color:#7D7D7D;
+}
+.seeAll a:hover{
+color:#5AA7EE;
+}
+.latestGameNumberPlayer {
+    font-size: 12px;
+    font-weight: normal;
+}
