@@ -1,10 +1,10 @@
 ﻿
    <div class = "header">
         <div class="logo_header">
-            <a href="http://localhost/svn-flashgame/"><img src="http://localhost/svn-flashgame/img/logo.jpg" width="287" height="132" alt="Image Logo" title="Game online"/></a>
+            <a href="./"><img src="./img/logo.jpg" width="287" height="132" alt="Image Logo" title="Game online"/></a>
         </div>
 		<div class="logo2_header">
-			<a href="http://localhost/svn-flashgame/"><img src="http://localhost/svn-flashgame/img/logo2.png" width="450" height="132" alt="Image Logo" title="Game online"/></a>
+			<a href="./"><img src="./img/logo2.png" width="450" height="132" alt="Image Logo" title="Game online"/></a>
 		</div>
 		<div class="signUp">
 			<form name="login" action="" method="post">

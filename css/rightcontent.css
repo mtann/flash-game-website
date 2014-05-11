@@ -1,0 +1,60 @@
+.r_top_latest_game{	
+	border-bottom: 1px solid #DFDFDF;
+    clear: both;
+    //margin-bottom: 10px;
+    padding-top:10px;
+    overflow: hidden;        
+}
+.r_list_latest_game{
+	padding-left:10px;
+}
+.r_latest_game{
+	border: 1px solid #DFDFDF;
+    box-shadow: 0 0 5px #DFDFDF;
+    display: inline-table;
+    margin-bottom: 10px;
+    width: 300px;
+    //font-family: tahoma;
+}
+.r_latest_game h1{
+ 	background: url("../img/icon-800.png") repeat-x scroll left 35px rgba(0, 0, 0, 0);
+    font-size: 14px;
+    font-weight: bold;
+    margin: 0;
+    padding: 10px 10px 12px;    
+}
+.item1{
+	background: none repeat scroll 0 0 #A16EB1;
+    border-radius: 3px;
+    color: #FFFFFF;
+    float: left;
+    font-weight: bold;
+    height: 20px;
+    line-height: 20px;
+    padding-top: 0;
+    text-align: center;
+    width: 22px;
+}
+.item2{
+	float:left;
+	padding-left:10px;
+	width:auto;
+}
+p.title{
+	color: #FD1E82;
+    font-weight: bold;
+    margin:0;    
+}
+p.title a{
+ color:#17658C;
+}
+p.totalplay {
+	color: #878787;
+    //padding-top: 5px;
+    font-size: 11px;
+}
+
+.right_content{
+width:300px;
+float:left;
+}

@@ -25,6 +25,12 @@
 		case "othergame": 
 			include("php/layout-othergame.php");
 			break;			
+		case "playgamelatest":
+			include("php/playgamelatest.php");
+			break;
+		case "playgame":
+			include("php/playgame.php");
+			break;
 		default: include("php/layout-index.php");	
 	}
 ?>
