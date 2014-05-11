@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.0.9
+-- version 4.1.12
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: May 11, 2014 at 05:34 PM
--- Server version: 5.6.14
--- PHP Version: 5.5.6
+-- Generation Time: May 11, 2014 at 05:42 PM
+-- Server version: 5.6.16
+-- PHP Version: 5.5.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -28,9 +28,9 @@ SET time_zone = "+00:00";
 
 CREATE TABLE IF NOT EXISTS `account` (
   `id` int(11) NOT NULL,
-  `username` int(11) NOT NULL,
-  `password` int(11) NOT NULL,
-  `email` int(11) NOT NULL,
+  `username` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `password` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
+  `email` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `avatar` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
   `rank` int(11) DEFAULT NULL,
   `score` int(11) DEFAULT NULL,
