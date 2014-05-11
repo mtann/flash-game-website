@@ -15,7 +15,7 @@
 			<?php echo $i;?></div> 
 			<div class="item2"> 
 				<p class="title">
-                	<a title="Play game <?php echo $row['name'];?>" href="./?mod=playgame&gameid=<?php echo $row['id'];?>"><strong><?php echo $row['name'];?></strong></a>
+                	<a title="Play game <?php echo $row['name'];?>" href="./?mod=playgamelatest&gameid=<?php echo $row['id'];?>"><strong><?php echo $row['name'];?></strong></a>
                 </p> 
 				<p class="totalplay"> 
 					Đang chơi:&nbsp;<?php echo $row['totalplay'];?>
