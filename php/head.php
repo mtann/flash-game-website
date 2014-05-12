@@ -29,9 +29,9 @@
 				</tr>
 				<tr>
 					<td>
-						<a href="http://localhost/svn-flashgame/php/register.php">Sign up</a>
+						<a href="./?mod=register">Sign up</a>
 					</td>
-					<td><a href="http://localhost/svn-flashgame/php/fogot_pass.php">Forgot your password?</a></td>
+					<td><a href="./mod=forgotpass">Forgot your password?</a></td>
 				</tr>
 			</table>
 			</form>     	
