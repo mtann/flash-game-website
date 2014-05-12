@@ -20,10 +20,12 @@
 </div>
 <div class="introduction">
 	<p style="background:#8ACA11; color:#fff; font-size:16pt;">HƯỚNG DẪN CHƠI GAME</p>
-	<p><?php echo $row['nhiemvu']?></p>
+	<p><?php echo $row['story']?></p>
 	<p style="text-decoration:underline;">Cách chơi:</p>
-	<p><?php echo $row['cachchoi'] ?></p>	
-<div>	
+	<p><?php echo $row['introduction'] ?></p>	
+<div>
+<div class="comment"><!--part comment here-->
+</div>	
 <table width="100%">
 <tr>
 	<td bgcolor="#24BDE2" height="35px" style="padding-left: 10px;color:#fff"> GAME CÙNG THỂ LOẠI KHÁC</td>
