@@ -3,15 +3,15 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
-<<<<<<< .mine
+
 -- Generation Time: May 12, 2014 at 12:15 PM
 -- Server version: 5.6.14
 -- PHP Version: 5.5.6
-=======
+
 -- Generation Time: May 11, 2014 at 05:42 PM
 -- Server version: 5.6.16
 -- PHP Version: 5.5.11
->>>>>>> .r32
+
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -34,15 +34,9 @@ SET time_zone = "+00:00";
 
 CREATE TABLE IF NOT EXISTS `account` (
   `id` int(11) NOT NULL,
-<<<<<<< .mine
   `username` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `password` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `email` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
-=======
-  `username` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `password` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
-  `email` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
->>>>>>> .r32
   `avatar` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
   `rank` int(11) DEFAULT NULL,
   `score` int(11) DEFAULT NULL,
