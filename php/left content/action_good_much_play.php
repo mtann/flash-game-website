@@ -114,7 +114,8 @@
 	</head>
 	<body>
 		<?php 
-			$type = $_GET['type'];
+			//$type = $_GET['type'];
+			$type="action";
 			$matchtype = array(
 				'action'=>"HÀNH ĐỘNG",
 				'sport'=>"THỂ THAO",

@@ -15,13 +15,14 @@
 			<?php include("php/left content/index/other game.php")?>  
 			-->
 		</div>		
-		<?php 
-			$matchtype = array(
-								"action","sport","brain","girl","strategy","adventure","othergame"								
-							);
-			for($i = 0; $i <= 6; $i++){
-				include("php/left content/type_good_much_play.php/?type=$matchtype[$i]");
-			}
+		<?php 			
+			include("php/left content/action_good_much_play.php");
+			include("php/left content/sport_good_much_play.php");
+			include("php/left content/brain_good_much_play.php");
+			include("php/left content/girl_good_much_play.php");
+			include("php/left content/strategy_good_much_play.php");
+			include("php/left content/adventure_good_much_play.php");
+			include("php/left content/othergame_good_much_play.php");			
 		?>
 </div>
 <div class="right_content" style="width: 300px; border: 1px solid;float:left;">
