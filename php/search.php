@@ -7,7 +7,7 @@
 else if($_SERVER['REQUEST_METHOD'] != 'GET'){
 	echo "chua get";
 }
-else{
+else if ($_SERVER['REQUEST_METHOD'] == 'GET'){
 	function unicode_str_filter ($str){
 		$unicode = array(
 		'a'=>'á|à|ả|ã|ạ|ă|ắ|ặ|ằ|ẳ|ẵ|â|ấ|ầ|ẩ|ẫ|ậ',
@@ -87,7 +87,7 @@ else{
 	else{
 	?><table width="100%">
 			<tr>
-			<td bgcolor="#24BDE2" height="35px" style="padding-left: 10px;color:#fff"> KẾT QUẢ TÌM KIẾM GAME : <?php $find = $_POST['box-search']; echo "".$find."";?></td>
+			<td bgcolor="#24BDE2" height="35px" style="padding-left: 10px;color:#fff"> KẾT QUẢ TÌM KIẾM GAME : <?php $find = $_GET['box-search']; echo "".$find."";?></td>
 			</tr>
 		</table>
 		<?php
