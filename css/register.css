@@ -1,0 +1,13 @@
+
+span{
+	color: #CC0C0C;
+}
+input[type=text]{
+	width: 250px;
+}
+input[type=password]{
+	width: 250px;
+}
+#passwordMatchCheck{
+	color: #CC0C0C;
+}
