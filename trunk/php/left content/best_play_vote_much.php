@@ -74,7 +74,11 @@
 		<script type="text/javascript" src="js/jquery-1.11.0.js"></script>
 		<script type="text/javascript">			
 			
-			function loadTabContent(tabUrl){
+			function loadTabContent(tabUrl, tid){
+				//tabId = $(this).attr("id");
+				tabId = "tab"+tid;
+				jQuery("[id^=tab]").removeClass("current");
+				jQuery("#"+tabId).addClass("current");
 				$("#preloader").show();
 				jQuery.ajax({
 					url: tabUrl, 
@@ -86,28 +90,44 @@
 				});
 			}
 			
+			function myInit()
+			{
+				id_tab = document.getElementById("tab1");
+				hr = id_tab.getAttribute("href");
+				id_tab.setAttribute("href", "#");
+				id_tab.setAttribute("onClick", "loadTabContent('"+hr+"', 1)");
+			}
+			
 			jQuery(document).ready(function(){				
 				
 				$("#preloader").hide();	
 				
 				tabUrl = jQuery("#tab1").attr("href");
-				jQuery("[id^=tab]").removeClass("current");					
-				jQuery("#tab1").addClass("current");
-				loadTabContent(tabUrl);
+				//jQuery("[id^=tab]").removeClass("current");					
+				//jQuery("#tab1").addClass("current");
+				loadTabContent(tabUrl, 1);
+				myInit();
 				
+				/*
 				jQuery("[id^=tab]").click(function(){	
 					
 					// get tab id and tab url
-					tabId = $(this).attr("id");										
+					tabId = $(this).attr("id");	
+					//alert(tabId);
 					tabUrl = jQuery("#"+tabId).attr("href");
-					
+					//
 					jQuery("[id^=tab]").removeClass("current");
 					jQuery("#"+tabId).addClass("current");
 					
 					// load tab content
+					//if(tabUrl!=NULL) {
+					//alert(tabUrl);
 					loadTabContent(tabUrl);
+					//}
+					
 					return false;
-				});
+				});	*/		
+
 			});
 			
 		</script>
@@ -130,8 +150,8 @@
 			<div class="navcontainer1">
 				<ul>
 					<li><a id="tab1" href="php/left content/tabs.php?id=1&mod=<?php echo $type ?>">GAME <?php echo $matchtype[$type] ?> HAY NHẤT</a></li>
-					<li><a id="tab2" href="php/left content/tabs.php?id=2&mod=<?php echo $type ?>">CHƠI NHIỀU</a></li>
-					<li><a id="tab3" href="php/left content/tabs.php?id=3&mod=<?php echo $type ?>">BÌNH CHỌN NHIỀU</a></li>					
+					<li><a id="tab2" onClick="loadTabContent('php/left content/tabs.php?id=2&mod=<?php echo $type ?>', 2)" href="#">CHƠI NHIỀU</a></li>
+					<li><a id="tab3" onClick="loadTabContent('php/left content/tabs.php?id=3&mod=<?php echo $type ?>', 3)" href="#">BÌNH CHỌN NHIỀU</a></li>					
 				</ul>
 			</div>
 
