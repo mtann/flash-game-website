@@ -15,10 +15,10 @@
 					$i++;
 					if($i==1) echo "<tr>";			
 					?>
-						<td>	
-							<a href="./?mod=playgame&gameid=<?php echo $rows['id'];?>"><img src="<?php echo $rows['avatar'] ?>" width="120" height="100"/></a>
+						<td>								
+							<a href="./?mod=playgame&gameid=<?php echo $rows['id'];?>" ><img src="<?php echo $rows['avatar'] ?>" width="120" height="100"/></a>
 							<br />	
-							<p><a href="./?mod=playgame&gameid=<?php echo $rows['id'];?>"><?php echo $rows['name'] ?></a></p>
+							<p><a href="./?mod=playgame&gameid=<?php echo $rows['id'];?>" ><?php echo $rows['name'] ?></a></p>
 							<p>Đang chơi:<?php echo $rows['totalplay'] ?></p>
 						</td>				
 					<?php
@@ -28,8 +28,7 @@
 					}
 				}
 				?></table><?php
-			}	
-					
+			}				
 			break;
 					  
 		case "2":

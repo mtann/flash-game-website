@@ -20,7 +20,7 @@
 <div class="right_content" style="width: 300px; border: 1px solid;float:left;">
 	
 	<?php include("php/right content/latest game.php");?>
-	<?php include("php/right content/topplayer.php");?>
-	<?php include("php/right content/statistic.php");?>
-	<div class="clear"></div> 
+	
+	<?php include("php/right content/statistic.php");?>	
 </div>
+
