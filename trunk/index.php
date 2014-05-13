@@ -10,9 +10,17 @@
 	<!--CSS-->
     <link rel="stylesheet" type="text/css" href="css/main.css" />	
 	<!--JAVASCRIPT-->
-	
+	<script type="text/javascript" src="js/quangcao.js"></script>
 </head>
 <body>
+
+		<div id="divAdRight" style="DISPLAY: none; POSITION: absolute; TOP: 0px">
+        	<a href="#"><img src="img/one_m8_banner_DOC_26766.jpg" width="125" /></a>
+		</div>
+		<div id="divAdLeft" style="DISPLAY: none; POSITION: absolute; TOP: 0px">
+        	<a href="#"><img src="img/s5_banner.jpg" width="125" /></a>
+		</div>
+
 <div class="container">
   <?php
     include("php/head.php");
@@ -26,5 +34,10 @@
  <?php include("php/footer.php")?>
 </div>
 </div>
+
+	<script type='text/javascript' language='javascript'>MainContentW = 1000;LeftBannerW = 125;RightBannerW = 125;LeftAdjust = 10;RightAdjust = 10;TopAdjust = 100;ShowAdDiv();window.onresize=ShowAdDiv;;</script>
+	
+	<script type='text/javascript' language='javascript'>MainContentW = 1000;LeftBannerW = 125;RightBannerW = 125;LeftAdjust = 10;RightAdjust = 10;TopAdjust = 100;ShowAdDiv();window.onresize=ShowAdDiv;;</script>
+	
 </body>
 </html>
