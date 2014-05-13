@@ -36,7 +36,7 @@
 			<a title="" class="mnRight" href="./?mod=othergame">Other game</a>
 		 </li>    
 		<li>
-			<form method="get" action="./">
+			<form method="get" action="">
 			<input type="hidden" name="mod" value = "search" />
 			<input type="text" placeholder="Search game" id="box-search" name="box-search"/>
 			<input type="submit" name="sumit" value="Search" />
