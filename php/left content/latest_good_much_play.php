@@ -7,11 +7,13 @@
 			{
 				float: left;
 				width: 697px;
-				border: 1px solid #000000;
+				border: 1px solid #DFDFDF;
+				box-shadow: 0 0 5px #DFDFDF;
+				margin-top:-20px;
 			}
 			.navcontainer1 ul
 			{
-				background-color: #5F707A;
+				background-color: #fff;
 				border-bottom:1px solid #DFDFDF;
 				border-top:1px solid #DFDFDF;
 				float:left;
@@ -44,8 +46,8 @@
 			}
 			.navcontainer1 ul li a.current
 			{
-				border-right:1px solid #f00;
-				background-color: #f00;
+				border-right:1px solid #24BDE2;
+				background-color: #24BDE2;
 				font-weight: bold;
 				color:#fff;
 				float:left;
@@ -74,7 +76,11 @@
 		<script type="text/javascript" src="js/jquery-1.11.0.js"></script>
 		<script type="text/javascript">			
 			
-			function loadTabContent(tabUrl){
+			function loadTabContent(tabUrl, tid){
+				//tabId = $(this).attr("id");
+				tabId = "tab"+tid;
+				jQuery("[id^=tab]").removeClass("current");
+				jQuery("#"+tabId).addClass("current");
 				$("#preloader").show();
 				jQuery.ajax({
 					url: tabUrl, 
@@ -86,36 +92,52 @@
 				});
 			}
 			
+			function myInit()
+			{
+				id_tab = document.getElementById("tab1");
+				hr = id_tab.getAttribute("href");
+				id_tab.setAttribute("href", "#");
+				id_tab.setAttribute("onClick", "loadTabContent('"+hr+"', 1)");
+			}
+			
 			jQuery(document).ready(function(){				
 				
 				$("#preloader").hide();	
 				
 				tabUrl = jQuery("#tab1").attr("href");
-				jQuery("[id^=tab]").removeClass("current");					
-				jQuery("#tab1").addClass("current");
-				loadTabContent(tabUrl);
+				//jQuery("[id^=tab]").removeClass("current");					
+				//jQuery("#tab1").addClass("current");
+				loadTabContent(tabUrl, 1);
+				myInit();
 				
+				/*
 				jQuery("[id^=tab]").click(function(){	
 					
 					// get tab id and tab url
-					tabId = $(this).attr("id");										
+					tabId = $(this).attr("id");	
+					//alert(tabId);
 					tabUrl = jQuery("#"+tabId).attr("href");
-					
+					//
 					jQuery("[id^=tab]").removeClass("current");
 					jQuery("#"+tabId).addClass("current");
 					
 					// load tab content
+					//if(tabUrl!=NULL) {
+					//alert(tabUrl);
 					loadTabContent(tabUrl);
+					//}
+					
 					return false;
-				});
+				});	*/		
+
 			});
 			
 		</script>
 	</head>
 	<body>
 		<?php 
-			//$type = $_GET['type'];
-			$type="brain";
+			//$type = $_GET['mod'];
+			$type = "action";
 			$matchtype = array(
 				'action'=>"HÀNH ĐỘNG",
 				'sport'=>"THỂ THAO",
@@ -130,9 +152,9 @@
 		
 			<div class="navcontainer1">
 				<ul>
-					<li><a id="tab1" href="php/left content/tabsindex.php?id=1&mod=<?php echo $type ?>">GAME <?php echo $matchtype[$type] ?></a></li>
-					<li><a id="tab2" href="php/left content/tabsindex.php?id=2&mod=<?php echo $type ?>">GAME HAY</a></li>
-					<li><a id="tab3" href="php/left content/tabsindex.php?id=3&mod=<?php echo $type ?>">CHƠI NHIỀU</a></li>					
+					<li><a id="tab1" href="php/left content/tabsindex.php?id=1&mod=<?php echo $type ?>">GAME HAY NHẤT</a></li>
+					<li><a id="tab2" onClick="loadTabContent('php/left content/tabsindex.php?id=2&mod=<?php echo $type ?>', 2)" href="#">CHƠI NHIỀU</a></li>
+					<li><a id="tab3" onClick="loadTabContent('php/left content/tabsindex.php?id=3&mod=<?php echo $type ?>', 3)" href="#">BÌNH CHỌN NHIỀU</a></li>					
 				</ul>
 			</div>
 

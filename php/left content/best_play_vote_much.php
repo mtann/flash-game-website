@@ -7,11 +7,13 @@
 			{
 				float: left;
 				width: 697px;
-				border: 1px solid #000000;
+				border: 1px solid #DFDFDF;
+				box-shadow: 0 0 5px #DFDFDF;
+				margin-top:-20px;
 			}
 			.navcontainer1 ul
 			{
-				background-color: #5F707A;
+				background-color: #fff;
 				border-bottom:1px solid #DFDFDF;
 				border-top:1px solid #DFDFDF;
 				float:left;
@@ -40,18 +42,18 @@
 				float:left;
 				padding:10px;
 				text-decoration:none;
-				width: 170px;
+				width: 208px;
 			}
 			.navcontainer1 ul li a.current
 			{
-				border-right:1px solid #f00;
-				background-color: #f00;
+				border-right:1px solid #24BDE2;
+				background-color: #24BDE2;
 				font-weight: bold;
 				color:#fff;
 				float:left;
 				padding:10px;
 				text-decoration:none;
-				width: 170px;
+				width: 208px;
 			}
 			#tabcontent
 			{
@@ -150,8 +152,8 @@
 			<div class="navcontainer1">
 				<ul>
 					<li><a id="tab1" href="php/left content/tabs.php?id=1&mod=<?php echo $type ?>">GAME <?php echo $matchtype[$type] ?> HAY NHẤT</a></li>
-					<li><a id="tab2" onClick="loadTabContent('php/left content/tabs.php?id=2&mod=<?php echo $type ?>', 2)" href="#">CHƠI NHIỀU</a></li>
-					<li><a id="tab3" onClick="loadTabContent('php/left content/tabs.php?id=3&mod=<?php echo $type ?>', 3)" href="#">BÌNH CHỌN NHIỀU</a></li>					
+					<li><a id="tab2" onClick="loadTabContent('php/left content/tabs.php?id=2&mod=<?php echo $type ?>', 2)" href="#">GAME <?php echo $matchtype[$type] ?> CHƠI NHIỀU</a></li>
+					<li><a id="tab3" onClick="loadTabContent('php/left content/tabs.php?id=3&mod=<?php echo $type ?>', 3)" href="#" style="width: 215px;" >GAME <?php echo $matchtype[$type] ?> BÌNH CHỌN NHIỀU</a></li>					
 				</ul>
 			</div>
 
