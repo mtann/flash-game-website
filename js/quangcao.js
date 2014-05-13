@@ -42,13 +42,13 @@ function FloatTopDiv()
     {
         var objAdDivRight = document.getElementById("divAdRight");
         var objAdDivLeft = document.getElementById("divAdLeft");
-		/*
+		
         if (document.body.clientWidth < 1000)
         {
             objAdDivRight.style.display = "none";
             objAdDivLeft.style.display = "none";
         }
-        else*/
+        else
         {
             objAdDivRight.style.display = "block";
             objAdDivLeft.style.display = "block";
