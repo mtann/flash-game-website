@@ -151,6 +151,17 @@
 			return false;
 		else return true;
 	}
+	//Modify user information
+	function modifyAllInformation($user_id, $newusername, $newpassword, $newemail, $newavatar){
+		$con = createConnection();
+		$sql_command = "UPDATE account SET username = '$newusername', password='$newpassword', email='$newemail', avatar='$newavatar' 
+		WHERE account.id='$user_id'";
+		mysqli_query($con, $sql_command);
+		closeConnection($con);
+		// if(!mysqli_query($con, $sql_command))
+		// 	return false;
+		// else return true;
+	}
 	// Admin delete user
 	// Delete everything related to user first
 	function deleteUser($user_id_input){
