@@ -1,8 +1,11 @@
 ﻿<!--code for form search-->
 <div class="left_content">
 <?php
-	if ($_SERVER['REQUEST_METHOD'] != 'POST'){
-	echo "chua post";
+	if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+	echo "post";
+}
+else if($_SERVER['REQUEST_METHOD'] != 'GET'){
+	echo "chua get";
 }
 else{
 	function unicode_str_filter ($str){
@@ -31,7 +34,7 @@ else{
 	//$find = $_POST['box-search'];
 	//echo "".$find."";
 	
-	$find = $_POST['box-search'];
+	$find = $_GET['box-search'];
 	$find = unicode_str_filter($find);
 	//$field = $_POST['field'];
 	//If they did not enter a search term we give them an error 
@@ -59,7 +62,7 @@ else{
 		$i = 0;
 	?><table width="100%">
 			<tr>
-			<td bgcolor="#24BDE2" height="35px" style="padding-left: 10px;color:#fff"> KẾT QUẢ TÌM KIẾM GAME : <?php $find = $_POST['box-search']; echo "".$find."";?></td>
+			<td bgcolor="#24BDE2" height="35px" style="padding-left: 10px;color:#fff"> KẾT QUẢ TÌM KIẾM GAME : <?php $find = $_GET['box-search']; echo "".$find."";?></td>
 			</tr>
 		<?php
 	
