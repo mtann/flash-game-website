@@ -36,8 +36,10 @@
 			<a title="" class="mnRight" href="./?mod=othergame">Other game</a>
 		 </li>    
 		<li>
+			<form method="get" action="php/search.php">
 			<input type="text" placeholder="Search game" id="box-search"/>
 			<input type="submit" value="Search" />
+			</form>
 		</li>	
 	</ul>	
 	<div class="clear"></div>

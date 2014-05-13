@@ -31,9 +31,9 @@
 		case "playgame":
 			include("php/playgame.php");
 			break;
-                case "search":
-                      include("search.php");
-                       break;
+        case "search":
+            include("search.php");
+            break;
 		default: include("php/layout-index.php");	
 	}
 ?>
