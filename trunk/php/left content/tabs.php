@@ -42,7 +42,6 @@
 					}
 				}
 				?></table><?php
-<<<<<<< .mine
 			}	
 			
 			$pageList = $page->pageList($mypage, $pages);
@@ -50,9 +49,6 @@
 			echo $pageList;
 			echo "</b>";
 			
-=======
-			}				
->>>>>>> .r54
 			break;
 					  
 		case "2":
