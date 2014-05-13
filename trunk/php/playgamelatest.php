@@ -6,7 +6,7 @@
 	$row=mysql_fetch_array($sql);
 	$totalgood = $totalbad = 0;
 ?>
-<div class="left_content">
+<div class="left_content" style="width: 697px; float:left;">
 <h3 style="color:blue;font-size:16pt;"><?php echo $row['name'];?> </h3>
 <div class="frame_game">
  <br />
@@ -23,7 +23,7 @@
 	<p><?php echo $row['story']?></p>
 	<p style="text-decoration:underline;">Cách chơi:</p>
 	<p><?php echo $row['introduction'] ?></p>	
-<div>
+</div>
 <div class="comment"><!--part comment here-->
 </div>	
 	
@@ -68,5 +68,6 @@
 	</tr>
 </table>
 </div>
-<div class="right_content">
+<div class="right_content" style="width: 300px;float:left;">
+	<?php include("php/right content/latest game.php");?>
 </div>

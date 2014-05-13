@@ -1,12 +1,40 @@
-﻿
+﻿<script type="text/javascript" src="js/jquery-1.11.0.js"></script>
+<script type="text/javascript">
+$(function(){
+	$(".votegood").click(function(){		
+		$.ajax({
+			url: "vote.php/?typevote=good",
+			success: function(mss){				
+			}
+		});	
+		return false;
+	});
+
+	$(".votebad").click(function(){
+		$.ajax({
+			url: "vote.php/?typevote=bad",
+			success: function(mss){			
+			}
+		});		
+		return false;
+	});
+});
+</script>
 <?php	
 	$id=$_GET['gameid'];
 	mysql_query("UPDATE game set totalplay=totalplay+1 where id='$id'");
 	$sql=mysql_query("select*from game where id='$id'");
 	$row=mysql_fetch_array($sql);
-	$totalgood = $totalbad = 0;
+	$result_vote = mysql_query("select*from vote where game_id='$id'");
+	$row_vote = mysql_fetch_array($result_vote);
+	if(isset($row_vote)){
+		$totalgood = $row_vote['total_good'];
+		$totalbad = $row_vote['total_bad'];
+	}else{
+		$totalgood = $totalbad = 0;
+	}
 ?>
-<div class="left_content">
+<div class="left_content" style="width: 697px; float:left;">
 <h3 style="color:blue;font-size:16pt;"><?php echo $row['name'];?> </h3>
 <div class="frame_game">
  <br />
@@ -14,8 +42,8 @@
 <br /><br />
 	<div class="votegame" style="width:160px;">
 		<h3>BÌNH CHỌN GAME</h3>
-		<p><a  href="#"><img width="16" height="18" alt="" src="http://img-game.24hstatic.com/images/agree.gif" /> </a> <span style="height:12px; background:#8ACA11;"><?php for($i=0; $i<31;$i++) echo"&nbsp;" ?></span>&nbsp; <?php echo $totalgood; ?></p>
-		<p><a  href="#"><img width="16" height="18" alt="" src="http://img-game.24hstatic.com/images/disagree.gif" /> </a><span style="height:12px;background:#FF0000;"><?php for($i=0; $i<3;$i++) echo"&nbsp;" ?></span>&nbsp;<?php echo $totalbad; ?></p>
+		<p><a  href="#" class="votegood"><img width="16" height="18" alt="" src="http://img-game.24hstatic.com/images/agree.gif"  /> </a> <span style="height:12px; background:#8ACA11;"><?php for($i=0; $i<31;$i++) echo"&nbsp;" ?></span>&nbsp; <?php echo $totalgood; ?></p>
+		<p><a  href="#" class="votebad"><img width="16" height="18" alt="" src="http://img-game.24hstatic.com/images/disagree.gif" /> </a><span style="height:12px;background:#FF0000;"><?php for($i=0; $i<3;$i++) echo"&nbsp;" ?></span>&nbsp;<?php echo $totalbad; ?></p>
 	</div>
 </div>
 <div class="introduction">
@@ -23,7 +51,7 @@
 	<p><?php echo $row['story']?></p>
 	<p style="text-decoration:underline;">Cách chơi:</p>
 	<p><?php echo $row['introduction'] ?></p>	
-<div>
+</div>
 <div class="comment"><!--part comment here-->
 </div>	
 <table width="100%">
@@ -68,5 +96,6 @@
 	</tr>
 </table>
 </div>
-<div class="right_content">
+<div class="right_content" style="width: 300px; float:left;">
+	<?php include("php/right content/latest game.php");?>
 </div>
