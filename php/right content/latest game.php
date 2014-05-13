@@ -12,7 +12,7 @@
 	?>
 		<div class="r_top_latest_game"> 
 		<?php if($i>3) echo "<div class='item1' style='background: #999;'>"; else echo "<div class='item1'>"; ?>
-			<?php echo $i;?></div> 
+			<img src="<?php echo $row['avatar'];?>" width="50" height="50"></div> 
 			<div class="item2"> 
 				<p class="title">
                 	<a title="Play game <?php echo $row['name'];?>" href="./?mod=playgamelatest&gameid=<?php echo $row['id'];?>"><strong><?php echo $row['name'];?></strong></a>
