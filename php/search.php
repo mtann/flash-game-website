@@ -45,8 +45,8 @@ else if ($_SERVER['REQUEST_METHOD'] == 'GET'){
 	//} 
 	 
 	// Otherwise we connect to our Database 
-	mysql_connect("localhost", "root", "") or die(mysql_error()); 
-	mysql_select_db("gameflash") or die(mysql_error()); 
+	//mysql_connect("localhost", "root", "") or die(mysql_error()); 
+	//mysql_select_db("gameflash") or die(mysql_error()); 
 	 
 	// We preform a bit of filtering 
 	$find = strip_tags($find); 
