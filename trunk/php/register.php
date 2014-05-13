@@ -1,92 +1,76 @@
 <?php
     session_start();
-    require('../libraries/config.php');
+    require ("../config/config.php");
 ?>
-<?php
-    if($_SERVER['REQUEST_METHOD'] == "POST"){
-        $name = strtolower(addslashes($_POST['account_name']));
-        $pass = md5(addslashes($_POST['account_pass']));
-        $verify_pass = md5(addslashes($_POST['re_account_pass']));
-        $email = addslashes($_POST['email']);
-        $gender="";
-        $birthday = addslashes($_POST['birthday']);
-        
-        if(!empty($_POST['gender']))
-            $gender = addslashes($_POST['gender']);
-        
-        
-        if(!$name || !$pass || !$verify_pass || !$email || !$gender || !$birthday){
-            echo "Please, enter full information. <a href = 'javascript:history.go(-1)'> Click here to back register</a>";
-            exit();
-        }
-        
-        $check_name = "select * from account where username = '".$name."'";        
-        $run = mysql_query($check_name);
-        $numrow = mysql_num_rows($run);              
-        if($numrow > 0){
-            echo "<script>alert('User name $name already exist in our database, please try other one!')</script>";
-            echo "<a href = 'javascript:history.go(-1)'> Click here to back register</a>";
-            exit();
-        }
-        
-        $check_email = "select * from account where email='$email'";
-        $run = mysql_query($check_email);
-        $numrow = mysql_num_rows($run);          
-        if($numrow > 0){
-            echo "<script>alert('Email $email already exist in our database, please try other one!')</script>";
-            echo "<a href = 'javascript:history.go(-1)'> Click here to back register</a>";
-            exit();            
-        }
-        
-        if($pass != $verify_pass){
-           echo "Password isn't true. <a href = 'javascript:history.go(-1)'> Click here to back register</a>"; 
-           exit();
-        }
-        
-        $sql = "insert into account (username, password, email) values ('$name','$pass','$email')";
-        if(mysql_query($sql)){
-            echo "Account {$name} is created. <a href='../index.php' >Click on here to login </a>";
-            exit();    
-        }        
-                
-    }
-?>
-
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<link rel="stylesheet" type="text/css" href="../css/register.css" />
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    
+    <!--CSS-->
+    <link rel="stylesheet" type="text/css" href="../css/register.css" />   
+    <link rel="stylesheet" type="text/css" href="../css/main.css" />   
+    <!--JAVASCRIPT-->
+    <SCRIPT src="../js/jquery-1.11.0.js"></SCRIPT>
+    <SCRIPT type="text/javascript" src="../js/register.js"></SCRIPT>
 </head>
 <body>
-<form name="register" action="register.php" method="post">
-    <div class="register">
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Enter account:<input type="text" name="account_name" size="25"/><br />
-       &nbsp;&nbsp;&nbsp;Enter password:<input type="password" name="account_pass" size="25"/><br />
-        Retype password:<input type="password" name="re_account_pass" size="25"/><br />
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Enter Email: <input type="text" name="email" size="25"/><br />
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Gender: <input type="radio" name="gender"/> Male &nbsp; <input type="radio" name="gender"/> Female <br />
-       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Birthday: <select name="birthday">
-            <option>Day</option>
-            <?php for($i = 1; $i <= 31; $i++){
-                ?> <option><?=$i?></option> <?php
-            }?>
-        </select>
-        
-        <select>
-            <option>Month</option>
-            <?php for($i = 1; $i <= 12; $i++){
-                ?> <option><?=$i?></option> <?php
-            }?>
-        </select>
-        
-        <select>
-            <option>Year</option>
-            <?php for($i = 1980; $i <= 2005; $i++){
-                ?> <option><?=$i?></option> <?php
-            }?>
-        </select>
-        <br />
-        <input type="submit" name="submit" value="Submit"/>&nbsp;&nbsp;&nbsp; <input type="reset" name="reset" value="Reset"/><br />        
-    </div>
-</form>
+<div class="container">
+  <?php
+    include("head2.php");
+    include("registerform.php")
+  ?>
+    
+<div class="register">
+        <?php 
+        if ($_SERVER['REQUEST_METHOD'] == 'POST'){ 
+            include ("database.php");
+            // echo "<pre>";
+            // var_dump($_POST);
+            // var_dump($_FILES);
+            // echo "</pre>";
+            //Retrieve the information submitted from user
+            $username=$_POST["registername"];
+            $password1=$_POST["password1"];
+            $password2=$_POST["password2"];
+            $email=$_POST["email"];
+            $avatar=($_FILES["avatar"]!=="")?$_FILES["avatar"]["name"]:"default.jpg";
+            //Insert to database
+            $userid = addUser($username, $password1, $email, $avatar, "", "");
+            //if insert successfully
+            if($userid !== -1){
+                //Save avatar in server
+                if(!empty($_FILES["avatar"])){
+                    $allowedExts = array("jpg", "jpeg", "gif", "png");
+                    $nameParts = explode(".", $_FILES["avatar"]["name"]);
+                    $extension = end($nameParts);
+                    if(($_FILES["avatar"]["size"] < 2000000) && in_array($extension, $allowedExts)){
+                        if ($_FILES["avatar"]["error"] > 0) {
+                            echo "Return Code: " . $_FILES["avatar"]["error"] . "<br>";
+                        }else{
+                            // echo "Upload: " . $_FILES["avatar"]["name"] . "<br>";
+                           //  echo "Type: " . $_FILES["avatar"]["type"] . "<br>";
+                           //  echo "Size: " . ($_FILES["avatar"]["size"] / 1024) . " kB<br>";
+                           //  echo "Temp file: " . $_FILES["avatar"]["tmp_name"] . "<br>";
+                            move_uploaded_file($_FILES["avatar"]["tmp_name"], "../img/Avatar/" . $_FILES["avatar"]["name"]);
+                            
+                        }
+                    }
+                }   
+                //create session
+                session_regenerate_id();
+                    $_SESSION['sess_user_id'] = $userid;
+                    $_SESSION['sess_username'] = $username;
+                    $_SESSION['sess_user_avatar'] = $avatar;
+                session_write_close();
+                header("Location:../index.php");
+            }
+        }
+?>
+</div>
+<div class="footer" style="clear:both;">
+ <?php include("footer.php")?>
+</div>
+</div>
 </body>
 </html>
