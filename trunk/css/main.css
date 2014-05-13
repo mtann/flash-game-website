@@ -15,7 +15,9 @@ background:#fff;
 .clear { clear:both}
 img{border:0}
 a{text-decoration:none}
-
+a:hover{
+color:#000;
+}
 .content{
 	width: 1004px;
 	margin: 0 auto;		
