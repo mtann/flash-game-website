@@ -1,11 +1,25 @@
 ﻿<?php
 	$p = $_GET['id'];
 	include("../../config/config.php");
+	include("../pager.php");
 	$type = $_GET['mod'];
+	$mypage = !isset($_GET['my_page'])?1:$_GET['my_page'];
+	
+	$page = new Pager;
+	$limit = 20;
+	$start = $page->findStart($limit);
+	$params = "id=".$p."&mod=".$type;
+	$page->setParams($params);
+	$page->setId("page");
+	
 	switch($p) {
 		case "1":		 
-				
-			$result = mysql_query("select * from game where type='$type' limit 20");
+			
+			$query = "select game.id, game.avatar, game.name, game.totalplay from game inner join vote on game.id=vote.game_id  order by vote.total_good desc";
+			$count = mysql_num_rows(mysql_query($query));
+			$pages = $page->findPages($count, $limit);
+			$query .= " LIMIT ".$start.", ".$limit;
+			$result = mysql_query($query);
 		
 			if(mysql_num_rows($result) > 0){
 				$i = 0;
@@ -28,12 +42,22 @@
 					}
 				}
 				?></table><?php
-			}				
+			}	
+			
+			$pageList = $page->pageList($mypage, $pages);
+			echo "<p align='center'>";
+			echo $pageList;
+			echo "</p>";
+			
 			break;
 					  
 		case "2":
-						
-			$result = mysql_query("select game.id, game.avatar, game.name, game.totalplay from game inner join vote on game.id=vote.game_id  where game.type='$type' order by vote.total_good desc limit 20");
+			
+			$query = "select * from game order by totalplay desc";
+			$count = mysql_num_rows(mysql_query($query));
+			$pages = $page->findPages($count, $limit);
+			$query .= " LIMIT ".$start.", ".$limit;
+			$result = mysql_query($query);			
 		
 			if(mysql_num_rows($result) > 0){
 				$i = 0;
@@ -57,12 +81,22 @@
 				}
 				?></table><?php
 			}	
+			
+			$pageList = $page->pageList($mypage, $pages);
+			echo "<p align='center'>";
+			echo $pageList;
+			echo "</p>";
+			
 			break;
 
 		case "3": 
 			
-			$result = mysql_query("select * from game where type='$type' order by totalplay desc limit 20");
-		
+			$query = "select game.id, game.avatar, game.name, game.totalplay from game inner join vote on game.id=vote.game_id order by (vote.total_good+vote.total_bad) desc";
+			$count = mysql_num_rows(mysql_query($query));
+			$pages = $page->findPages($count, $limit);
+			$query .= " LIMIT ".$start.", ".$limit;
+			$result = mysql_query($query);
+					
 			if(mysql_num_rows($result) > 0){
 				$i = 0;
 				?><table width="100%">			
@@ -85,6 +119,12 @@
 				}
 				?></table><?php
 			}	
+			
+			$pageList = $page->pageList($mypage, $pages);
+			echo "<p align='center'>";
+			echo $pageList;
+			echo "</p>";
+			
 			break;		
 	}
 ?>	
