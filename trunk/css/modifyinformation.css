@@ -1,0 +1,10 @@
+
+span{
+	color: #CC0C0C;
+}
+#updateform form table tr td input[type=text]{
+	width: 250px;
+}
+#updateform form table tr td input[type=password]{
+	width: 250px;
+}
