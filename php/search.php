@@ -22,8 +22,8 @@ else{
 	mysql_connect("localhost", "root", "") or die(mysql_error()); 
 	mysql_select_db("gameflash") or die(mysql_error()); 
 	 
-	// We preform a bit of filtering 
-	$find = strtoupper($find); 
+	//We preform a bit of filtering 
+	//$find = strtoupper($find); 
 	$find = strip_tags($find); 
 	$find = trim ($find); 
 	 
