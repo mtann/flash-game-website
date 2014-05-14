@@ -95,7 +95,7 @@
 	function checkLogin($username, $password){
 		$con = createConnection();
 		$sql_command = 
-		"SELECT id, avatar FROM account WHERE username="."'$username' AND password="."'$password'";
+		"SELECT id, avatar, user_type FROM account WHERE username="."'$username' AND password="."'$password'";
 		try{
 			$registered = mysqli_query($con, $sql_command);	
 		}catch(Exception $e){
@@ -119,6 +119,7 @@
 		else {
 			$returnArray["account_id"] = $result["id"];
 			$returnArray["avatar"] = $result["avatar"]===NULL?"default.jpg":$result["avatar"];
+			$returnArray["user_type"] = $result["user_type"];
 			return $returnArray;
 		}
 	}
@@ -194,6 +195,20 @@
   			$value = "'" .mysql_real_escape_string($value). "'";
   		}
 		return $value;
+	}
+	//add game
+	function add_game($name, $type, $avatar, $link, $story, $introduction, $upload_time){
+		$con = createConnection();
+		$name = mysql_real_escape_string($name);
+		$type = mysql_real_escape_string($type);
+		$avatar = mysql_real_escape_string($avatar);
+		$link = mysql_real_escape_string($link);
+		$story = mysql_real_escape_string($story);
+		$introduction = mysql_real_escape_string($introduction);
+		$sql_command = "INSERT INTO game(name, type, avatar, link, story, introduction, upload_time) VALUES('$name', '$type',
+		'$avatar', '$link', '$story', '$introduction', '$upload_time')" ;
+		mysqli_query($con, $sql_command);
+		closeConnection($con);
 	}
 	//call functions
 	//selectGamesOfCategory("1");
