@@ -199,16 +199,24 @@
 	//add game
 	function add_game($name, $type, $avatar, $link, $story, $introduction, $upload_time){
 		$con = createConnection();
-		$name = mysql_real_escape_string($name);
-		$type = mysql_real_escape_string($type);
-		$avatar = mysql_real_escape_string($avatar);
-		$link = mysql_real_escape_string($link);
-		$story = mysql_real_escape_string($story);
-		$introduction = mysql_real_escape_string($introduction);
+		$name = check_input($name);
+		$type = check_input($type);
+		$avatar = check_input($avatar);
+		$link = check_input($link);
+		$story = check_input($story);
+		$introduction = check_input($introduction);
 		$sql_command = "INSERT INTO game(name, type, avatar, link, story, introduction, upload_time) VALUES('$name', '$type',
 		'$avatar', '$link', '$story', '$introduction', '$upload_time')" ;
 		mysqli_query($con, $sql_command);
 		closeConnection($con);
+	}
+	// select all users
+	function selectUsers(){
+		$con = createConnection();
+		$sql_command = "SELECT username, user_type FROM account";
+		$result = mysqli_query($con, $sql_command);
+		closeConnection($con);
+		return $result;
 	}
 	//call functions
 	//selectGamesOfCategory("1");
