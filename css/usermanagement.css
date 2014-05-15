@@ -1,0 +1,19 @@
+#usertable td, th{
+	border: 1px solid #000000;
+}
+#usertable{
+	width: 1004px;
+}
+#usertable td{
+	text-align: center;
+}
+#usertable th{
+	background: #309FDB;
+}
+#usertable td{
+	background: #EDC5E3;
+}
+#usermanagementdiv{
+	margin: 0px auto;
+	width: 1004px;
+}
