@@ -15,10 +15,11 @@
 			$_SESSION['sess_user_id'] = $userArray['account_id'];
 			$_SESSION['sess_username'] = $username;
 			$_SESSION['sess_user_avatar'] = $userArray['avatar'];
+			$_SESSION['sess_user_type'] = $userArray['user_type'];
 		session_write_close();
 		echo 1;
 	}else
 		echo 0;
 		//if not registered yet
-		// header("Location:../index.php");
+		header("Location:../index.php");
 ?>

@@ -6,7 +6,7 @@
 	// Create connection function
 	function createConnection(){
 		$con=mysqli_connect("localhost","black_tears","password","gameflash");
-
+		mysqli_set_charset($con, "utf8");//them cai nay de hien thi tieng viet
 	// Check connection
 	if (mysqli_connect_errno())
 	  	{
@@ -24,30 +24,12 @@
 	}
 	// Working with database:
 	// Select games of category:
-	function selectGamesOfCategory($type_id_input){//$type_id is a string
+	function selectGamesOfCategory($gametype){//$type_id is a string
 		//check input
-		$type_id = intval($type_id_input);
 		//connect database
 		$con = createConnection();
-		$sql_command = "SELECT game_id FROM category WHERE category.type_id=$type_id";
-		//select game_id
-
-		$game_id_list = mysqli_query($con,$sql_command);
-		$game_detail_list;
-		while($row = mysqli_fetch_array($game_id_list))
-  		{
-  			$sql_command = "SELECT * FROM games WHERE $row[game_id]=games.game_id";
-  			$game_detail_list = mysqli_query($con, $sql_command);
-  			while ($game_detail = mysqli_fetch_array($game_detail_list)) {
-  				echo $game_detail['game_id']." | ".$game_detail['game_name']." | ".$game_detail['description']." | ".
-  				$game_detail['status']." | ".$game_detail['rating']." | ".$game_detail['avatar']." | ".
-  				$game_detail['link']." | ".$game_detail['upload_time'];
-  				echo "<br>";
-  				echo "________________________________________________";
-  				echo "<br>";
-  			}
-  			
-  		}
+  		$sql_command = "SELECT * FROM game WHERE type="."'$gametype'";
+  		$game_detail_list = mysqli_query($con, $sql_command);
 		//close connection
 		closeConnection($con);
 		return $game_detail_list;
@@ -165,19 +147,36 @@
 	}
 	// Admin delete user
 	// Delete everything related to user first
-	function deleteUser($user_id_input){
+	function deleteUser($user_name_input){
 		//check input
-		$user_id = intval($user_id_input);
 		$con = createConnection();
-		// Delete game_played table first
-		$sql_command = "DELETE game_played WHERE game_played.user_id=$user_id";
+		$sql_command = "DELETE FROM account WHERE account.username='$user_name_input'";
+
+		
 		if(!mysqli_query($con, $sql_command))
-			return false;
-		$sql_command = "DELETE account WHERE account.user_id=$user_id";
+			echo 0;
+		else echo 1;
 		closeConnection($con);
+	}
+	//Admin make user as admin
+	function makeadmin($username){
+		$con = createConnection();
+		$sql_command = "UPDATE account SET user_type = 1 WHERE account.username='$username'";
+		
 		if(!mysqli_query($con, $sql_command))
-			return false;
-		else return true;
+			echo 0;
+		else echo 1;
+		closeConnection($con);
+	}
+	//Admin remove an admin
+	function removeadmin($username){
+		$con = createConnection();
+		$sql_command = "UPDATE account SET user_type = 0 WHERE account.username='$username'";
+		
+		if(!mysqli_query($con, $sql_command))
+			echo 0;
+		else echo 1;
+		closeConnection($con);
 	}
 	//Check username and password
 	function check_input($value)
@@ -197,7 +196,7 @@
 		return $value;
 	}
 	//add game
-	function add_game($name, $type, $avatar, $link, $story, $introduction, $upload_time){
+	function add_game($name, $type, $avatar, $link, $story, $introduction){
 		$con = createConnection();
 		$name = check_input($name);
 		$type = check_input($type);
@@ -205,9 +204,12 @@
 		$link = check_input($link);
 		$story = check_input($story);
 		$introduction = check_input($introduction);
-		$sql_command = "INSERT INTO game(name, type, avatar, link, story, introduction, upload_time) VALUES('$name', '$type',
-		'$avatar', '$link', '$story', '$introduction', '$upload_time')" ;
-		mysqli_query($con, $sql_command);
+		$upload_time=date("Y/m/d");
+		$sql_command = "INSERT INTO game(name, type, avatar, link, story, introduction, upload_time) 
+		VALUES($name, $type, $avatar, $link, $story, $introduction, $upload_time)" ;
+		if(mysqli_query($con, $sql_command))
+			echo 1;
+		else echo 0;
 		closeConnection($con);
 	}
 	// select all users
@@ -217,6 +219,27 @@
 		$result = mysqli_query($con, $sql_command);
 		closeConnection($con);
 		return $result;
+	}
+	//update game
+	function updateGame($gameid, $avatar, $link, $story, $introduction){
+		$con = createConnection();
+		$sql_command = "UPDATE game SET avatar=\"$avatar\", link=\"$link\", story=\"$story\", introduction=\"$introduction\" WHERE 
+		id=\"$gameid\"";
+		$result = mysqli_query($con, $sql_command);
+		if($result) {
+			echo 1;
+		}else echo 0;
+		closeConnection($con);
+	}
+	//delete game
+	function deletegame($gameid){
+		$con = createConnection();
+		$sql_command = "DELETE FROM game WHERE id=$gameid";
+		$result = mysqli_query($con, $sql_command);
+		if($result) {
+			echo 1;
+		}else echo 0;
+		closeConnection($con);
 	}
 	//call functions
 	//selectGamesOfCategory("1");
