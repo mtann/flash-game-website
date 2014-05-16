@@ -1,0 +1,29 @@
+.game td, th{
+	border: 1px solid #000000;
+}
+.gametable{
+	width: 1004px;
+}
+.gametable td{
+	text-align: center;
+}
+.gametable th{
+	background: #309FDB;
+}
+.gametable td{
+	background: #EDC5E3;
+}
+#gametables{
+	margin: 0px auto;
+	width: 1004px;
+}
+#gametables h2{
+	color: #150BD6;
+}
+input[type='button']{
+	background: #0BD6BE;
+}
+input[type='button']:hover{
+	background: #0B3AD6;
+	cursor: pointer;
+};
