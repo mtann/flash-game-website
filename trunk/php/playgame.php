@@ -1,4 +1,5 @@
 ﻿<script type="text/javascript" src="js/jquery-1.11.0.js"></script>
+<script type="text/javascript" src="js/comments.js"></script>
 <script type="text/javascript">
 $(function(){
 	$(".votegood").click(function(){		
@@ -52,7 +53,37 @@ $(function(){
 	<p style="text-decoration:underline;">Cách chơi:</p>
 	<p><?php echo $row['introduction'] ?></p>	
 </div>
+
+
 <div class="comment"><!--part comment here-->
+	<h2>Comments here</h2>
+	<?php
+		include("database.php");
+		$commentArrays=commentsofgame($_GET['gameid']);
+		echo "<table id=\"commenttable\" style=\"width: 682px\">";
+		while($row=mysqli_fetch_array($commentArrays)){
+			echo "<tr>";
+			echo "<td>";
+			echo "<a style=\"color: #0915B5\">";
+			echo $row['user_name'];
+			echo ":";
+			echo "</a>";
+			echo "</td>";
+			echo "<td>";
+			echo $row['content'];
+			echo "<br>";
+			echo "</td>";
+			echo "</tr>";
+		}
+		echo "</table>";
+		if(isset($_SESSION['sess_user_id']) && ($_SESSION['sess_user_id'] !== -1)) {
+			$username=$_SESSION['sess_username'];
+			$gameid=$_GET['gameid'];
+			echo "<input id=\"mycomment\" type=\"text\" style=\"width: 682px; height: 50px\">";
+			echo "<input type=\"button\" value=\"Post Comment\" onclick='postcomment(\"$username\", \"$gameid\")'>";
+		}
+	?>
+	
 </div>	
 <table width="100%">
 <tr>

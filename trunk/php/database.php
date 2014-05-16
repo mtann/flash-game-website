@@ -241,6 +241,24 @@
 		}else echo 0;
 		closeConnection($con);
 	}
+	//select comments of games
+	function commentsofgame($gameid){
+		$con = createConnection();
+		$sql_command = "SELECT * FROM comment WHERE game_id=$gameid";
+		$result = mysqli_query($con, $sql_command);
+		closeConnection($con);
+		return $result;
+	}
+	//add comment
+	function addComment($GameId, $Username, $Content){
+		$con = createConnection();
+		$sql_command = "INSERT INTO comment(user_name, game_id, content) VALUES (\"$Username\", \"$GameId\", \"$Content\")";
+		$result = mysqli_query($con, $sql_command);
+		if($result)
+			echo 1;
+		else echo 0;
+		closeConnection($con);
+	}
 	//call functions
 	//selectGamesOfCategory("1");
 	// selectLatestUploadedGames();
