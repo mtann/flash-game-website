@@ -8,47 +8,67 @@
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
     
     <!--CSS-->
-    <link rel="stylesheet" type="text/css" href="../css/register.css" />   
+    <link rel="stylesheet" type="text/css" href="../css/usermanagement.css" />   
     <link rel="stylesheet" type="text/css" href="../css/main.css" />   
     <!--JAVASCRIPT-->
     <SCRIPT src="../js/jquery-1.11.0.js"></SCRIPT>
-    <SCRIPT type="text/javascript" src="../js/register.js"></SCRIPT>
+    <SCRIPT type="text/javascript" src="../js/usermanagement.js"></SCRIPT>
 </head>
 <body>
-	<div class="container">
   		<?php
 	    	include("head2.php");
-
-  		?>
-  </div>
-      <?php
+        //xu ly xoa, make admin
         include("database.php");
         $userList = selectUsers();
-        echo "<div style ="."'margin-left: 150px'".">";
-          echo "<table style="."'border: 1px'".">";
+        echo "<div id="."'usermanagementdiv'".">";
+          echo "<table id="."'usertable'".">";
+            echo "<tr>";
+              echo "<th>";
+              echo "Username";
+              echo "</th>";
+              echo "<th>";
+              echo "Type of user";
+              echo "</th>";
+              echo "<th>";
+              echo "Delete user";
+              echo "</th>";
+              echo "<th>";
+              echo "Make admin";
+              echo "</th>";
+              echo "<th>";
+              echo "Remove admin";
+              echo "</th>";
+            echo "</tr>";
           while($row=mysqli_fetch_array($userList)){
             $username = $row["username"];
-            echo "<tr>";
+            if($username!=$_SESSION["sess_username"]){
+              echo "<tr id="."'$username'".">";
 
-            echo "<td>";
-            echo $row["username"];
-            echo "</td>";
+              echo "<td>";
+              echo $row["username"];
+              echo "</td>";
 
-            echo "<td>";
-            echo $row["user_type"]==='1'?"Admin":"NotAdmin";
-            echo "</td>";
+              echo "<td id="."'"."$username"."usertype'".">";
+              echo $row["user_type"]==='1'?"Admin":"NotAdmin";
+              echo "</td>";
 
-            echo "<td>";
-            echo "<a href="."'UserManagement.php?Delete='"."'$username'".">Xoa</a>";
-            echo "</td>";
+              echo "<td>";
+              echo "<input type="."'checkbox'"."onclick="."'deleteuser("."\"$username\"".")'"." name="."'deleteuser'>";
+              echo "</td>";
 
-            echo "<td>";
-            echo "<a href="."'#'".">Dua len lam admin</a>";
-            echo "</td>";
-            echo "</tr>";
+              echo "<td>";
+              echo "<input type="."'checkbox'"."onclick="."'makeadmin("."\"$username\"".")'"." name="."'makeadmin'>";
+              echo "</td>";
+
+              echo "<td>";
+              echo "<input type="."'checkbox'"."onclick="."'removeadmin("."\"$username\"".")'"." name="."'removeadmin'>";
+              echo "</td>";
+              echo "</tr>";
+            }
+            
           }
           echo "</table>";
-        echo "</div>"
+        echo "</div>";
       ?>
 </body>
 </html>
