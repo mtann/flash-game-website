@@ -5,7 +5,8 @@
  //    </head>
 	// Create connection function
 	function createConnection(){
-		$con=mysqli_connect("localhost","black_tears","password","gameflash");
+		//$con=mysqli_connect("localhost","black_tears","password","gameflash");
+		$con=mysqli_connect("localhost","root","","gameflash");
 		mysqli_set_charset($con, "utf8");//them cai nay de hien thi tieng viet
 	// Check connection
 	if (mysqli_connect_errno())

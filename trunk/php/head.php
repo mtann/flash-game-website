@@ -16,7 +16,7 @@
 						echo "<div class="."logout".">";
 						echo "<image src="."'img/Avatar/$avatar'"." alt="."'avatar'"." style="."'width: 20px height: 20px; margin-left: 5px'".">";
 						echo "<a href="."'php/modifyinformation.php'"." style="."'width: 20px height: 20px; margin-left: 5px'".">$username"."</a>";
-						if($_SESSION['sess_user_type']==1){
+						if(isset($_SESSION['sess_user_type']) && $_SESSION['sess_user_type']==1){
 							echo "<a href="."'php/UserManagement.php'"." style="."'width: 20px height: 20px; margin-left: 5px; color: #FFFFFF; border: 1px solid'".">User</a>";
 							echo "<a href="."'php/GameManagement.php'"." style="."'width: 20px height: 20px; margin-left: 5px; color: #FFFFFF; border: 1px solid'".">Game</a>";
 						}
