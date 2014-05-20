@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: May 20, 2014 at 02:10 PM
+-- Generation Time: May 20, 2014 at 03:24 PM
 -- Server version: 5.6.16
 -- PHP Version: 5.5.9
 
@@ -27,7 +27,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE IF NOT EXISTS `account` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `password` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `user_type` int(1) NOT NULL DEFAULT '0',
@@ -36,16 +36,7 @@ CREATE TABLE IF NOT EXISTS `account` (
   `rank` int(11) DEFAULT NULL,
   `score` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Dumping data for table `account`
---
-
-INSERT INTO `account` (`id`, `username`, `password`, `user_type`, `email`, `avatar`, `rank`, `score`) VALUES
-(0, 'thanhtung', 'Tram4231', 0, 'tung@yahoo.com.vn', '2.PNG', 0, 0),
-(1, 'boyphunhuan', 'Tao4567890', 1, '', NULL, NULL, 1000),
-(2, 'sydotrum', '', 0, '', NULL, NULL, 1200);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
