@@ -5,7 +5,7 @@
  //    </head>
 	// Create connection function
 	function createConnection(){
-		//$con=mysqli_connect("localhost","black_tears","password","gameflash");
+		//$con=mysqli_connect("localhost","root","","gameflash");
 		$host="sql108.byethost10.com";
 		$user="b10_14808564";
 		$pass="Tram4231";

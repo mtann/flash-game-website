@@ -5,3 +5,36 @@ border: 1px solid #DFDFDF;
 box-shadow: 0 0 5px #DFDFDF;
 margin-top:17px;
 }
+
+ul.navlatest{
+    overflow:hidden; padding:0px;
+    margin-left:260px;
+}
+ul.navlatest li{
+    display:inline;
+    float:left;
+    margin: 0px 5px;
+    background:#8AB1FE;
+}
+ul.navlatest li a{
+    color:white;
+    text-decoration:none;display:block; padding:3px 8px;
+}
+ul.navlatest li:hover{
+    background:#3A7ABE;
+}
+ul.navlatest li.current{
+    font-weight:bold;padding:3px 8px;
+}
+#tabcontent td:hover{
+    border:1px solid #BAE3FF;
+}
+#tblatest td:hover{
+    border:1px solid #BAE3FF;     
+}
+#tbplaylatest td:hover{
+    border:1px solid #BAE3FF; 
+}
+#tbplaygame td:hover{
+    border:1px solid #BAE3FF; 
+}

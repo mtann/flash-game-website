@@ -46,7 +46,7 @@ p.title{
     margin:0;    
 }
 p.title a{
- color:#17658C;
+ color:#2161C3;
 }
 p.totalplay {
 	color: #878787;
@@ -57,4 +57,7 @@ p.totalplay {
 .right_content{
 width:300px;
 float:left;
+}
+.title strong:hover{
+    color:#289079;   
 }

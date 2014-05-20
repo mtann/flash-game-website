@@ -7,7 +7,7 @@
 			<a href="../index.php"><img src="../img/logo2.png" width="450" height="132" alt="Image Logo" title="Game online"/></a>
 		</div>
 		<div class="signUp">
-			<form id="login" method="POST" action="php/login.php">
+			<form id="login" method="POST" action="login.php">
 			<table>    
 				<?php    	
 					if(isset($_SESSION['sess_user_id']) && ($_SESSION['sess_user_id'] !== -1)) {
@@ -26,12 +26,12 @@
 						echo "<tr>";
 							echo "<td> <label>User Name <label></td>";
 							echo "<td>";
-							echo "<input type="."'text' name="."'username' size="."'16' style="."'border: 1px solid black; padding-top: 2px; padding-bottom: 2px; border-radius: 8px;'"."id="."'username'"."/>";
+							echo "<input type="."'text' name="."'username' size="."'16' style="."'border: 1px solid black; padding-top: 2px; padding-bottom: 2px; border-radius: 8px; width:135px;'"."id="."'username'"."/>";
 							echo "</td>";
 						echo "</tr>";
 						echo "<tr>";
 							echo "<td><label>Passworld</label></td>";
-							echo "<td><input type="."'password' name="."'password' size="."'16' style="."'border: 1px solid black; padding-top: 2px; padding-bottom: 2px;border-radius: 8px;'"."id="."'password'"."/></td>";
+							echo "<td><input type="."'password' name="."'password' size="."'16' style="."'border: 1px solid black; padding-top: 2px; padding-bottom: 2px;border-radius: 8px;width:135px;'"."id="."'password'"."/></td>";
 						echo "</tr>";
 						echo "<tr>";        		
 							echo "<td style="."'padding-left: 0px; padding-right: 0px;'>";
@@ -45,7 +45,7 @@
 							echo "<td>";
 								echo "<a href="."'register.php'>Sign up</a>";
 							echo "</td>";
-							echo "<td><a href="."'./mod=forgotpass'>Forgot your password?</a></td>";
+							echo "<td><a href="."'../mod=forgotpass'>Forgot your password?</a></td>";
 						echo "</tr>";
 					}
 				?>
