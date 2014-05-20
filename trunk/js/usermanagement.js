@@ -1,0 +1,45 @@
+function deleteuser(username){
+	$.ajax({
+	    type:"post",
+	    url:"../php/DeleteUser.php",
+	    data:"deleteuser="+username,
+	    success:function(result){
+	    	if(result==1){
+	    		document.getElementById(username).remove();
+		    	$("input:checkbox").removeAttr("checked");
+		    	console.log(username);
+		    	console.log(result);	
+	    	}
+		}
+	});
+}
+function makeadmin(username){
+	$.ajax({
+	    type:"post",
+	    url:"../php/MakeAdmin.php",
+	    data:"makeadmin="+username,
+	    success:function(result){
+	    	if(result==1){
+	    		$("#"+username+"usertype").html("Admin");
+	    		$("input:checkbox").removeAttr("checked");
+	    		console.log(username);
+	    		console.log(result);
+	    	}
+		}
+	});
+}
+function removeadmin(username){
+	$.ajax({
+	    type:"post",
+	    url:"../php/RemoveAdmin.php",
+	    data:"removeadmin="+username,
+	    success:function(result){
+	    	if(result==1){
+	    		$("#"+username+"usertype").html("NotAdmin");
+	    		$("input:checkbox").removeAttr("checked");
+	    		console.log(username);
+	    		console.log(result);
+	    	}
+		}
+	});
+}
