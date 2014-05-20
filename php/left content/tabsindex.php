@@ -29,7 +29,7 @@
 					$i++;
 					if($i==1) echo "<tr>";			
 					?>
-						<td>								
+						<td align="center">								
 							<a href="./?mod=playgame&gameid=<?php echo $rows['id'];?>" ><img src="<?php echo $rows['avatar'] ?>" width="120" height="100"/></a>
 							<br />	
 							<p><a href="./?mod=playgame&gameid=<?php echo $rows['id'];?>" ><?php echo $rows['name'] ?></a></p>
@@ -67,7 +67,7 @@
 					$i++;
 					if($i==1) echo "<tr>";			
 					?>
-						<td>	
+						<td align="center">	
 							<a href="./?mod=playgame&gameid=<?php echo $rows['id'];?>"><img src="<?php echo $rows['avatar'] ?>" width="120" height="100"/></a>
 							<br />	
 							<p><a href="./?mod=playgame&gameid=<?php echo $rows['id'];?>"><?php echo $rows['name'] ?></a></p>
@@ -105,7 +105,7 @@
 					$i++;
 					if($i==1) echo "<tr>";			
 					?>
-						<td>	
+						<td align="center">	
 							<a href="./?mod=playgame&gameid=<?php echo $rows['id'];?>"><img src="<?php echo $rows['avatar'] ?>" width="120" height="100"/></a>
 							<br />	
 							<p><a href="./?mod=playgame&gameid=<?php echo $rows['id'];?>"><?php echo $rows['name'] ?></a></p>

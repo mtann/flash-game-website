@@ -58,7 +58,7 @@ $(function(){
 <div class="comment"><!--part comment here-->
 	<h2>Comments here</h2>
 	<?php
-		include("database.php");
+/*		include("database.php");
 		$commentArrays=commentsofgame($_GET['gameid']);
 		echo "<table id=\"commenttable\" style=\"width: 682px\">";
 		while($row=mysqli_fetch_array($commentArrays)){
@@ -81,18 +81,40 @@ $(function(){
 			$gameid=$_GET['gameid'];
 			echo "<input id=\"mycomment\" type=\"text\" style=\"width: 682px; height: 50px\">";
 			echo "<input type=\"button\" value=\"Post Comment\" onclick='postcomment(\"$username\", \"$gameid\")'>";
-		}
+		}*/
 	?>
 	
 </div>	
-<table width="100%">
+<table width="100%" id="tbplaygame">
 <tr>
 	<td bgcolor="#24BDE2" height="35px" style="padding-left: 10px;color:#fff"> GAME CÙNG THỂ LOẠI KHÁC</td>
 </tr>
 <?php
 	
 	$type = $row['type'];
-	$cung=mysql_query("select*from game where type='$type' order by upload_time desc limit 20");
+		$display=12;
+	if(isset($_GET['start']) && ((int)($_GET['start']) >= 0))
+	  $start = $_GET['start'];
+	else
+	  $start = 0; 
+
+	if(isset($_GET['page']) && ((int)($_GET['page']) >= 0))
+	  $page = $_GET['page'];
+	else{
+	   $sql = "select count(id) from game where type='$type'";
+	   $res = mysql_query($sql);
+	   $row = mysql_fetch_array($res);
+	   if($row[0] > $display)
+		$page = ceil($row[0]/$display);
+	   else
+		$page = 1;
+	}
+	$current = ($start/$display)+1;
+	$next = $start+$display;
+	$prev = $start-$display;	
+			
+	$cung=mysql_query("select*from game where type='$type'order by upload_time desc limit $start, $display");
+	
 	$i = 0;
 	while($rowc=mysql_fetch_array($cung))
 	{					
@@ -100,7 +122,7 @@ $(function(){
 ?>
 	<?php if($i == 1)echo "<tr>" ;?>
 	
-	<td>	
+	<td align="center">	
         <a href="./?mod=playgame&gameid=<?php echo $rowc['id'];?>" ><img src="<?php echo $rowc['avatar']?>" width="120" height="100" /> </a>        
 		<br /><br />				
 		<a href="./?mod=playgame&gameid=<?php echo $rowc['id'];?>"> <?php echo $rowc['name']; ?> </a> 		
@@ -121,11 +143,34 @@ $(function(){
 	
 <?php	
 }
-?>
+?>	
+</table>
+ <ul class="navlatest" style="margin-left: 220px;">
+	<?php
+	if($page > 1){
+	  if($current != 1){
+		 echo "<li><a href='./?mod=playgame&start=$prev&page=$page&gameid=$id'>Previous</a></li>";
+	  }
+	  for($i = 1; $i <= $page; $i++){
+		if($current != $i){
+		echo "<li><a href='./?mod=playgame&start=".($display*($i-1))."&page=$page&gameid=$id'>$i</a></li>";
+	  }else{
+		echo "<li class='current'>$i</li>";
+	  }
+	 }
+
+	 if($current!=$page){
+	  echo "<li><a href='./?mod=playgame&start=$next&page=$page&gameid=$id'>Next</a></li>";
+	 }
+	}
+	?>	
+ </ul>
+ <table width="100%">
 	<tr>
 		<td><a href="./?mod=seeall_latest&type=latest">Xem tất cả</a></td>
 	</tr>
 </table>
+
 </div>
 <div class="right_content" style="width: 300px; float:left;">
 	<?php include("php/right content/latest game.php");?>
