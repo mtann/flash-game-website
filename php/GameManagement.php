@@ -76,8 +76,8 @@
           echo "<td>";
             echo "<input type=\"text\" value=\"$story\" id=\"$gameid"."story\">";
           echo "</td>";
-          echo "<td>";
-            echo "<input type=\"text\" value=\"$introduction\" id=\"$gameid"."introduction\">";
+          echo "<td>";            	
+			?> <input type="text" value='<?php echo htmlspecialchars($introduction);?>' id="<?=$gameid?>introduction"><?php			
           echo "</td>";
           echo "<td>";
             echo "<input type=\"button\" value=\"Save Changes\" onclick='savegamechanges(\"$gameid\")'>";
@@ -160,7 +160,8 @@
             echo "<input type=\"text\" value=\"$story\" id=\"$gameid"."story\">";
           echo "</td>";
           echo "<td>";
-            echo "<input type=\"text\" value=\"$introduction\" id=\"$gameid"."introduction\">";
+            //echo "<input type=\"text\" value=\"$introduction\" id=\"$gameid"."introduction\">";
+			?> <input type="text" value='<?php echo htmlspecialchars($introduction);?>' id="<?=$gameid?>introduction"><?php			
           echo "</td>";
           echo "<td>";
             echo "<input type=\"button\" value=\"Save Changes\" onclick='savegamechanges(\"$gameid\")'>";
@@ -244,7 +245,8 @@
             echo "<input type=\"text\" value=\"$story\" id=\"$gameid"."story\">";
           echo "</td>";
           echo "<td>";
-            echo "<input type=\"text\" value=\"$introduction\" id=\"$gameid"."introduction\">";
+            //echo "<input type=\"text\" value=\"$introduction\" id=\"$gameid"."introduction\">";
+			?> <input type="text" value='<?php echo htmlspecialchars($introduction);?>' id="<?=$gameid?>introduction"><?php			
           echo "</td>";
           echo "<td>";
             echo "<input type=\"button\" value=\"Save Changes\" onclick='savegamechanges(\"$gameid\")'>";
@@ -328,7 +330,8 @@
             echo "<input type=\"text\" value=\"$story\" id=\"$gameid"."story\">";
           echo "</td>";
           echo "<td>";
-            echo "<input type=\"text\" value=\"$introduction\" id=\"$gameid"."introduction\">";
+            //echo "<input type=\"text\" value=\"$introduction\" id=\"$gameid"."introduction\">";
+			?> <input type="text" value='<?php echo htmlspecialchars($introduction);?>' id="<?=$gameid?>introduction"><?php			
           echo "</td>";
           echo "<td>";
             echo "<input type=\"button\" value=\"Save Changes\" onclick='savegamechanges(\"$gameid\")'>";
@@ -412,7 +415,8 @@
             echo "<input type=\"text\" value=\"$story\" id=\"$gameid"."story\">";
           echo "</td>";
           echo "<td>";
-            echo "<input type=\"text\" value=\"$introduction\" id=\"$gameid"."introduction\">";
+            //echo "<input type=\"text\" value=\"$introduction\" id=\"$gameid"."introduction\">";
+			?> <input type="text" value='<?php echo htmlspecialchars($introduction);?>' id="<?=$gameid?>introduction"><?php			
           echo "</td>";
           echo "<td>";
             echo "<input type=\"button\" value=\"Save Changes\" onclick='savegamechanges(\"$gameid\")'>";
@@ -496,7 +500,8 @@
             echo "<input type=\"text\" value=\"$story\" id=\"$gameid"."story\">";
           echo "</td>";
           echo "<td>";
-            echo "<input type=\"text\" value=\"$introduction\" id=\"$gameid"."introduction\">";
+            //echo "<input type=\"text\" value=\"$introduction\" id=\"$gameid"."introduction\">";
+			?> <input type="text" value='<?php echo htmlspecialchars($introduction);?>' id="<?=$gameid?>introduction"><?php			
           echo "</td>";
           echo "<td>";
             echo "<input type=\"button\" value=\"Save Changes\" onclick='savegamechanges(\"$gameid\")'>";
@@ -527,6 +532,93 @@
           echo "</td>";
         echo "</tr>";
     echo "</table>";
+	/*
+	//bs: gameother
+    $game_detail_list = selectGamesOfCategory("othergame");
+    echo "<h2>Other Games List</h2>";
+    echo "<div id=\"gametables\">";
+    echo "<table id=\"girltable\" class=\"gametable\">";
+      echo "<th>";
+        echo "Name";
+      echo "</th>";
+
+      echo "<th>";
+        echo "Avatar";
+      echo "</th>";
+
+      echo "<th>";
+        echo "Link";
+      echo "</th>";
+
+      echo "<th>";
+        echo "Story";
+      echo "</th>";
+
+      echo "<th>";
+        echo "Introduction";
+      echo "</th>";
+
+      echo "<th>";
+        echo "Save";
+      echo "</th>";
+
+      echo "<th>";
+        echo "Delete";
+      echo "</th>";
+    while ($game_detail = mysqli_fetch_array($game_detail_list)) {
+        $gameid = $game_detail['id'];
+        $gamename = $game_detail['name'];
+        $avatar = $game_detail['avatar'];
+        $link = $game_detail['link'];
+        $story = $game_detail['story'];
+        $introduction = $game_detail['introduction'];
+        echo "<tr id=\"$gameid\">";
+          echo "<td>";
+            echo "<input type=\"text\" value=\"$gamename\" disabled id=\"$gamename\">";
+          echo "</td>";
+          echo "<td>";
+            echo "<input type=\"text\" value=\"$avatar\" id=\"$gameid"."avatar\">";
+          echo "</td>";
+          echo "<td>";
+            echo "<input type=\"text\" value=\"$link\" id=\"$gameid"."link\">";
+          echo "</td>";
+          echo "<td>";
+            echo "<input type=\"text\" value=\"$story\" id=\"$gameid"."story\">";
+          echo "</td>";
+          echo "<td>";
+            //echo "<input type=\"text\" value=\"$introduction\" id=\"$gameid"."introduction\">";
+			?> <input type="text" value='<?php echo htmlspecialchars($introduction);?>' id="<?=$gameid?>introduction"><?php			
+          echo "</td>";
+          echo "<td>";
+            echo "<input type=\"button\" value=\"Save Changes\" onclick='savegamechanges(\"$gameid\")'>";
+          echo "</td>";
+          echo "<td>";
+            echo "<input type=\"checkbox\" onclick='deletegame(\"$gameid\")'>";
+          echo "</td>";
+        echo "</tr>";
+    }
+        echo "<tr>";
+          echo "<td>";
+            echo "<input type=\"text\" id=\"newbrainname\">";
+          echo "</td>";
+          echo "<td>";
+            echo "<input type=\"text\" id=\"newbrainavatar\">";
+          echo "</td>";
+          echo "<td>";
+            echo "<input type=\"text\" id=\"newbrainlink\">";
+          echo "</td>";
+          echo "<td>";
+            echo "<input type=\"text\" id=\"newbrainstory\">";
+          echo "</td>";
+          echo "<td>";
+            echo "<input type=\"text\" id=\"newbrainintroduction\">";
+          echo "</td>";
+          echo "<td>";
+            echo "<input type=\"button\" value=\"Save New Game\" onclick='addnewgame(\"othergame\")'>";
+          echo "</td>";
+        echo "</tr>";
+    echo "</table>";
+	*/
     echo "</div>";
   ?>
 </body>
