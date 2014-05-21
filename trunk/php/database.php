@@ -210,7 +210,7 @@
 		$introduction = check_input($introduction);
 		$upload_time=date("Y/m/d");
 		$sql_command = "INSERT INTO game(name, type, avatar, link, story, introduction, upload_time) 
-		VALUES($name, $type, $avatar, $link, $story, $introduction, $upload_time)" ;
+		VALUES($name, $type, $avatar, $link, $story, $introduction, CURRENT_TIMESTAMP)" ;
 		if(mysqli_query($con, $sql_command))
 			echo 1;
 		else echo 0;
